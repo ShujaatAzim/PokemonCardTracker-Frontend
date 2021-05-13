@@ -1,9 +1,14 @@
 import React from 'react';
+import Card from '../Components/Card';
 
 const HomePage = () => {
+
+  let cardNumbers = [...Array(17).keys()]
+  cardNumbers.shift()
+
   return (
-    <div>
-      <img style={{ height: "15rem" }} src="https://images.pokemontcg.io/base1/4_hires.png" alt="base charizard" />
+    <div style={{width: "65%" }}>
+      { cardNumbers.map(number => <Card key={number} number={number} /> )}
     </div>
   );
 }
