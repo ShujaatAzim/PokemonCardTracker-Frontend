@@ -1,5 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import HomePage from './Pages/HomePage';
+import NotFoundPage from './Pages/NotFoundPage';
 
 const App = () => {
   return (
@@ -9,7 +11,8 @@ const App = () => {
       </div>
       <div className="body">
         <Switch>
-          <Route />
+          <Route exact path="/" component={HomePage} />
+          <Route component={NotFoundPage} />
         </Switch>
       </div>
       <div className="footer">
