@@ -1,14 +1,12 @@
 import React from 'react';
 import Card from '../Components/Card';
+import { PokemonCards } from '../Data/PokemonCards';
 
 const HomePage = () => {
 
-  let cardNumbers = [...Array(17).keys()]
-  cardNumbers.shift()
-
   return (
     <div style={{width: "65%" }}>
-      { cardNumbers.map(number => <Card key={number} number={number} /> )}
+      { PokemonCards.map(card => <Card key={card.image} card={card} /> )}
     </div>
   );
 }

@@ -8,10 +8,8 @@ const NavBar = () => {
 
   return (
     <Menu secondary>
-      <Menu.Item>
-        <Menu.Header>
-          <b>Pokemon Card Tracker!</b>
-        </Menu.Header>
+      <Menu.Item header>
+          <h3><b>Pokemon Card Tracker!</b></h3>
       </Menu.Item>
       <Menu.Item name="Home" onClick={() => history.push("/")} />
       <Menu.Item name="Profile" onClick={() => history.push("/profile")} />
