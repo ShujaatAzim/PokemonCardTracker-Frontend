@@ -1,10 +1,10 @@
 import React from 'react';
 import LoginForm from '../Components/LoginForm';
 
-const LoginPage = () => {
+const LoginPage = props => {
   return (
     <div>
-      <LoginForm />
+      <LoginForm setUser={props.setUser} />
     </div>
   );
 }

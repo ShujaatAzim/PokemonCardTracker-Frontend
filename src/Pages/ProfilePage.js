@@ -1,9 +1,17 @@
 import React from 'react';
 
 const ProfilePage = () => {
+
+  const creds = JSON.parse(localStorage.getItem("trackerCreds"))
+
   return (
     <div>
-      Profile Page
+      <p>
+        name: {creds.username}
+      </p>
+      <p>
+        token: {creds.jwt}
+      </p>
     </div>
   );
 }

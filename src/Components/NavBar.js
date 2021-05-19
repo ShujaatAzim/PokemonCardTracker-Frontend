@@ -2,11 +2,18 @@ import React from 'react'
 import { useHistory } from 'react-router-dom';
 import { Menu, Dropdown } from 'semantic-ui-react'
 
-const NavBar = () => {
+const NavBar = props => {
 
   let history = useHistory();
+  const { user, setUser } = props;
+  const handleLogout = () => {
+    localStorage.removeItem("trackerCreds")
+    setUser(null)
+    history.push('/')
+  }
 
   return (
+    user && user.logged === true ? 
     <Menu secondary>
       <Menu.Item header>
           <h3><b>Pokemon Card Tracker!</b></h3>
@@ -21,8 +28,15 @@ const NavBar = () => {
         </Dropdown.Menu>
       </Dropdown>
       <Menu.Menu position="right">
-        <Menu.Item name="Logout" />
+        <Menu.Item name="Logout" onClick={() => handleLogout()} />
       </Menu.Menu>
+    </Menu>
+    :
+    <Menu secondary>
+      <Menu.Item header>
+          <h3><b>Pokemon Card Tracker!</b></h3>
+      </Menu.Item>
+      <Menu.Item name="Login" onClick={() => history.push("/login")} />
     </Menu>
   );
 }
