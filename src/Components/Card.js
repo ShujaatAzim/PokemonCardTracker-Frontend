@@ -6,7 +6,7 @@ const Card = props => {
   
   return (
     <img 
-      style={{ height: "15rem", margin: "0rem 0.5rem 0.5rem 0.5rem", opacity: owned ? "100%" : "50%" }} 
+      style={{ height: "15rem", margin: "0rem 0.5rem 0.5rem 0.5rem", opacity: owned ? "100%" : "30%" }} 
       src={props.card.image} 
       alt="card" 
       onClick={() => setOwned(!owned)}
