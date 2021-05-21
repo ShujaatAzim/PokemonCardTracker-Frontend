@@ -9,6 +9,7 @@ import NavBar from './Components/NavBar';
 const App = () => {
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("trackerCreds")))
+  const [set, setSet] = useState("base")
 
   return (
     <div className="app">
@@ -18,7 +19,7 @@ const App = () => {
       <div className="body">
         { user && user.logged === true ? 
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" component={HomePage} set={set} setSet={setSet} />
           <Route exact path="/profile" component={ProfilePage}  />
           <Route component={NotFoundPage} />
         </Switch>
