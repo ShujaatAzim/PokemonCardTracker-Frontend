@@ -6,7 +6,7 @@ const HomePage = () => {
   const creds = JSON.parse(localStorage.getItem("trackerCreds"))
 
   return (
-    <div style={{width: "65%" }}>
+    <div style={{ width: "65%" }}>
       {creds.cards.map(card => <Card key={card.id} card={card} />)}
     </div>
   );
