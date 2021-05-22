@@ -19,7 +19,7 @@ const App = () => {
       <div className="body">
         { user && user.logged === true ? 
         <Switch>
-          <Route exact path="/" component={HomePage} set={set} setSet={setSet} />
+          <Route exact path="/" component={() => <HomePage set={set} setSet={setSet} />} />
           <Route exact path="/profile" component={ProfilePage}  />
           <Route component={NotFoundPage} />
         </Switch>

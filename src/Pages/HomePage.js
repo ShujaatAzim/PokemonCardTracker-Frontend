@@ -1,31 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../Components/Card';
 
-const HomePage = () => {
+const HomePage = props => {
 
   const [cards, setCards] = useState(null)
-  const [loading, setLoading] = useState(true)
   const creds = JSON.parse(localStorage.getItem("trackerCreds"))
 
-  useEffect(() => {
-    getCards()
-    // eslint-disable-next-line
-  }, [])
+  // useEffect(() => {
+  //   getCards()
+  //   // eslint-disable-next-line
+  // }, [])
 
-  const getCards = () => {
-    fetch('http://localhost:3000/cards', {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${creds.jwt}`
-      }
-    })
-    .then(resp => resp.json())
-    .then(data => console.log(data))
-  }
-
+  // const getCards = () => {
+  //   fetch('http://localhost:3000/cards', {
+  //     method: "GET",
+  //     headers: {
+  //       Authorization: `Bearer ${creds.jwt}`
+  //     }
+  //   })
+  //   .then(resp => resp.json())
+  //   .then(data => setCards(data))
+  // }
   return (
     <div style={{ width: "65%" }}>
-      {loading ? "Fetching cards..." : "Got cards!" }
+      {creds.cards.map(card => {
+        return (
+          <Card card={card} />
+        )
+      })}
     </div>
   );
 }

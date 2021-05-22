@@ -5,7 +5,9 @@ import { Menu, Dropdown } from 'semantic-ui-react'
 const NavBar = props => {
 
   let history = useHistory();
+  
   const { user, setUser } = props;
+
   const handleLogout = () => {
     localStorage.removeItem("trackerCreds")
     setUser(null)
