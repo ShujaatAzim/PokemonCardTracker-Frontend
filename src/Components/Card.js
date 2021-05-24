@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Card = props => {
 
-  const { image, owned } = props
-
-  const [showCard, setShowCard] = useState(false)
+  const { card } = props
 
   return (
     <img 
-      style={{ height: "15rem", margin: "0rem 0.5rem 0.5rem 0.5rem", opacity: owned ? "100%" : "30%" }} 
-      src={image} 
+      style={{ height: "15rem", margin: "0rem 0.5rem 0.5rem 0.5rem", opacity: card.owned ? "100%" : "30%" }} 
+      src={card.image} 
       alt="card" 
-      onClick={() => setShowCard(!showCard)}
+      onClick={() => props.setShowCard(card)}
     />
   );
 }
