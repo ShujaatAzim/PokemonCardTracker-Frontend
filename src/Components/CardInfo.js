@@ -2,32 +2,31 @@ import React, { useState } from 'react';
 
 const CardInfo = props => {
 
-  const card = props.card
-  const [owned, setOwned] = useState(card.owned)
+  const [owned, setOwned] = useState(props.card.owned)
 
   return (
     <div>
-      {card.name}
+      {props.card.name}
       <br />
-      <img src={card.image} alt={card.name} style={{ height: "25rem" }}/>
+      <img src={props.card.image} alt={props.card.name} style={{ height: "25rem" }}/>
       <br />
       <br />
       <label>Owned?</label>
       <br />
-      <input type="checkbox" checked={owned} onChange={() => setOwned(!owned)} />
+      <input type="checkbox" checked={props.card.owned} onClick={() => setOwned(!owned)} />
       <br />
       <br />
-      { owned ? 
+      { owned === true ? 
       <div>
         <label>How many?</label>
         <br />
-        { card.quantity}
+        { props.card.quantity}
       </div> : null }
       <br />
       <br />
       <label>Notes</label>
       <br />
-      <textarea value={card.notes} />
+      <textarea value={props.card.notes} />
     </div>
   );
 }

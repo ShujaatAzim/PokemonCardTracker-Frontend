@@ -9,7 +9,7 @@ const Card = props => {
       style={{ height: "15rem", margin: "0rem 0.5rem 0.5rem 0.5rem", opacity: card.owned ? "100%" : "30%" }} 
       src={card.image} 
       alt="card" 
-      onClick={() => props.setShowCard(card)}
+      onClick={() => {props.setShowCard(null);props.setShowCard(card)}}
     />
   );
 }
