@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const CardInfo = props => {
-
-  const [owned, setOwned] = useState(props.card.owned)
 
   return (
     <div>
@@ -11,17 +9,9 @@ const CardInfo = props => {
       <img src={props.card.image} alt={props.card.name} style={{ height: "25rem" }}/>
       <br />
       <br />
-      <label>Owned?</label>
+      Quantity:
       <br />
-      <input type="checkbox" checked={props.card.owned} onClick={() => setOwned(!owned)} />
-      <br />
-      <br />
-      { owned === true ? 
-      <div>
-        <label>How many?</label>
-        <br />
-        { props.card.quantity}
-      </div> : null }
+      { props.card.quantity}
       <br />
       <br />
       <label>Notes</label>
