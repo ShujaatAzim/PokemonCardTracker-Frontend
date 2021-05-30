@@ -1,4 +1,5 @@
 import React from 'react';
+import { Form, TextArea } from 'semantic-ui-react';
 
 const CardInfo = props => {
 
@@ -16,7 +17,9 @@ const CardInfo = props => {
       <br />
       <label>Notes</label>
       <br />
-      <textarea value={props.card.notes} />
+      <Form>
+        <TextArea value={props.card.notes} />
+      </Form>
     </div>
   );
 }
