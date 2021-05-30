@@ -9,3 +9,8 @@ export const cardsState = atom({
   key: "cards",
   default: []
 })
+
+export const setState = atom({
+  key: "set",
+  default: "base"
+})
