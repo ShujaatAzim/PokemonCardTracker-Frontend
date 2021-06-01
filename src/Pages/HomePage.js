@@ -35,7 +35,7 @@ const HomePage = () => {
         {cards.map(card => <Card key={card.id} card={card} setShowCard={setShowCard} />)}
       </div>
       <div style={{ width: "35%" }}>
-        {showCard ? <CardInfo card={showCard} /> : null}
+        {showCard ? <CardInfo key={showCard.id} card={showCard} /> : null}
       </div>
     </div>
   );

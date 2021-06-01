@@ -1,25 +1,28 @@
-import React from 'react';
-import { Form, TextArea } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Form, TextArea, Button } from 'semantic-ui-react';
 
 const CardInfo = props => {
 
+  const { card } = props
+
+  const [quantity, setQuantity] = useState(card.quantity)
+  const [notes, setNotes] = useState(card.notes)
+
   return (
     <div>
-      {props.card.name}
+      <h2>{card.name}</h2>
+      <img src={card.image} alt={card.name} style={{ height: "20rem" }}/>
       <br />
-      <img src={props.card.image} alt={props.card.name} style={{ height: "25rem" }}/>
+      <h4>Quantity: {" " + quantity }</h4>
+      <Button color="green" onClick={() => setQuantity(quantity + 1)}>+</Button>
+      <Button color="red" onClick={() => setQuantity(quantity - 1)}>-</Button>
       <br />
-      <br />
-      Quantity:
-      <br />
-      { props.card.quantity}
-      <br />
-      <br />
-      <label>Notes</label>
-      <br />
+      <h4>Notes</h4>
       <Form>
-        <TextArea value={props.card.notes} />
+        <TextArea value={notes} rows={4} style={{ width: "50%" }} onChange={e => setNotes(e.target.value)}/>
       </Form>
+      <br />
+      <Button color="blue">Submit Changes</Button>
     </div>
   );
 }
