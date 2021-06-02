@@ -4,7 +4,7 @@ import { cardsState } from '../Recoil/atoms';
 import Card from '../Components/Card';
 import CardInfo from '../Components/CardInfo';
 
-const HomePage = () => {
+const HomePage = props => {
 
   const creds = JSON.parse(localStorage.getItem("trackerCreds"))
   const [loading, setLoading] = useState(true)
@@ -32,7 +32,7 @@ const HomePage = () => {
     loading ? <div>Loading...</div> : 
     <div style={{ display: "flex" }}>
       <div style={{ width: "65%" }}>
-        {cards.map(card => <Card key={card.id} card={card} setShowCard={setShowCard} />)}
+        {cards.filter(card => card.set === props.set).map(card => <Card key={card.id} card={card} setShowCard={setShowCard} />)}
       </div>
       <div style={{ width: "35%" }}>
         {showCard ? <CardInfo key={showCard.id} creds={creds} card={showCard} getCards={getCards} setLoading={setLoading} setShowCard={setShowCard} /> : null}

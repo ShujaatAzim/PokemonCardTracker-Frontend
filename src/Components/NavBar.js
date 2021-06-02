@@ -6,7 +6,7 @@ const NavBar = props => {
 
   let history = useHistory();
   
-  const { user, setUser } = props;
+  const { user, setUser, setSet } = props;
 
   const handleLogout = () => {
     localStorage.removeItem("trackerCreds")
@@ -24,9 +24,9 @@ const NavBar = props => {
       <Menu.Item name="Profile" onClick={() => history.push("/profile")} />
       <Dropdown item text="Sets">
         <Dropdown.Menu>
-          <Dropdown.Item>Base Set</Dropdown.Item>
-          <Dropdown.Item>Jungle</Dropdown.Item>
-          <Dropdown.Item>Fossil</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSet("base")}>Base Set</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSet("jungle")}>Jungle</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSet("fossil")}>Fossil</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
       <Menu.Menu position="right">

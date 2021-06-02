@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, TextArea, Button } from 'semantic-ui-react';
+import swal from 'sweetalert';
 
 const CardInfo = props => {
 
@@ -26,6 +27,7 @@ const CardInfo = props => {
     .then(resp => resp.json())
     .then(data => {props.getCards();props.setShowCard(data)})
     .then(() => setUpdated(false))
+    .then(() => swal(`${card.name} Updated!`, `Your ${card.name} card info has been updated!`, "success"))
   }
 
   return (
@@ -35,7 +37,7 @@ const CardInfo = props => {
       <br />
       <h4>Quantity: {" " + quantity }</h4>
       <Button color="green" onClick={() => {setQuantity(quantity + 1);setUpdated(true)}}>+</Button>
-      <Button color="red" onClick={() => {setQuantity(quantity - 1);setUpdated(true)}}>-</Button>
+      <Button color="red" disabled={quantity < 1} onClick={() => {setQuantity(quantity - 1);setUpdated(true)}}>-</Button>
       <br />
       <h4>Notes</h4>
       <Form>
