@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, TextArea, Button } from 'semantic-ui-react';
 
 const CardInfo = props => {
@@ -7,6 +7,29 @@ const CardInfo = props => {
 
   const [quantity, setQuantity] = useState(card.quantity)
   const [notes, setNotes] = useState(card.notes)
+
+  useEffect(() => {
+
+  }, [props])
+
+  const handleSubmit = e => {
+    // e.preventDefault();
+    let newCardInfo = {
+      quantity: quantity,
+      notes: notes
+    }
+    fetch(`http://localhost:3000/cards/${card.id}`, {
+      method: "PATCH",
+      headers: {
+        "Authorization": `Bearer ${props.creds.jwt}`,
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(newCardInfo)
+    })
+    .then(resp => resp.json())
+    .then(data => {props.getCards();props.setShowCard(data)})
+  }
 
   return (
     <div>
@@ -22,7 +45,7 @@ const CardInfo = props => {
         <TextArea value={notes} rows={4} style={{ width: "50%" }} onChange={e => setNotes(e.target.value)}/>
       </Form>
       <br />
-      <Button color="blue">Submit Changes</Button>
+      <Button color="blue" onClick={e => handleSubmit(e)}>Submit Changes</Button>
     </div>
   );
 }

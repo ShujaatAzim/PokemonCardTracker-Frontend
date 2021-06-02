@@ -25,7 +25,7 @@ const HomePage = () => {
     })
     .then(resp => resp.json())
     .then(data => setCards(data))
-    .then(() => setLoading(!loading))
+    .then(() => setLoading(false))
   }
 
   return (
@@ -35,7 +35,7 @@ const HomePage = () => {
         {cards.map(card => <Card key={card.id} card={card} setShowCard={setShowCard} />)}
       </div>
       <div style={{ width: "35%" }}>
-        {showCard ? <CardInfo key={showCard.id} card={showCard} /> : null}
+        {showCard ? <CardInfo key={showCard.id} creds={creds} card={showCard} getCards={getCards} setLoading={setLoading} setShowCard={setShowCard} /> : null}
       </div>
     </div>
   );
