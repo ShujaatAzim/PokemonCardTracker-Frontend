@@ -8,12 +8,7 @@ const CardInfo = props => {
   const [quantity, setQuantity] = useState(card.quantity)
   const [notes, setNotes] = useState(card.notes)
 
-  useEffect(() => {
-
-  }, [props])
-
-  const handleSubmit = e => {
-    // e.preventDefault();
+  const handleSubmit = () => {
     let newCardInfo = {
       quantity: quantity,
       notes: notes
@@ -45,7 +40,7 @@ const CardInfo = props => {
         <TextArea value={notes} rows={4} style={{ width: "50%" }} onChange={e => setNotes(e.target.value)}/>
       </Form>
       <br />
-      <Button color="blue" onClick={e => handleSubmit(e)}>Submit Changes</Button>
+      <Button color="blue" onClick={() => handleSubmit()}>Submit Changes</Button>
     </div>
   );
 }
