@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Form, TextArea, Button } from 'semantic-ui-react';
 
 const CardInfo = props => {
@@ -7,6 +7,7 @@ const CardInfo = props => {
 
   const [quantity, setQuantity] = useState(card.quantity)
   const [notes, setNotes] = useState(card.notes)
+  const [updated, setUpdated] = useState(false)
 
   const handleSubmit = () => {
     let newCardInfo = {
@@ -24,6 +25,7 @@ const CardInfo = props => {
     })
     .then(resp => resp.json())
     .then(data => {props.getCards();props.setShowCard(data)})
+    .then(() => setUpdated(false))
   }
 
   return (
@@ -32,15 +34,15 @@ const CardInfo = props => {
       <img src={card.image} alt={card.name} style={{ height: "20rem" }}/>
       <br />
       <h4>Quantity: {" " + quantity }</h4>
-      <Button color="green" onClick={() => setQuantity(quantity + 1)}>+</Button>
-      <Button color="red" onClick={() => setQuantity(quantity - 1)}>-</Button>
+      <Button color="green" onClick={() => {setQuantity(quantity + 1);setUpdated(true)}}>+</Button>
+      <Button color="red" onClick={() => {setQuantity(quantity - 1);setUpdated(true)}}>-</Button>
       <br />
       <h4>Notes</h4>
       <Form>
-        <TextArea value={notes} rows={4} style={{ width: "50%" }} onChange={e => setNotes(e.target.value)}/>
+        <TextArea value={notes} rows={4} style={{ width: "50%" }} onChange={e => {setNotes(e.target.value);setUpdated(true)}}/>
       </Form>
       <br />
-      <Button color="blue" onClick={() => handleSubmit()}>Submit Changes</Button>
+      <Button color="blue" disabled={!updated} onClick={() => handleSubmit()}>Submit Changes</Button>
     </div>
   );
 }
