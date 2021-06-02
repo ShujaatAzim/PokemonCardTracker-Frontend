@@ -35,7 +35,8 @@ const HomePage = props => {
         {cards.filter(card => card.set === props.set).map(card => <Card key={card.id} card={card} setShowCard={setShowCard} />)}
       </div>
       <div style={{ width: "35%" }}>
-        {showCard ? <CardInfo key={showCard.id} creds={creds} card={showCard} getCards={getCards} setLoading={setLoading} setShowCard={setShowCard} /> : null}
+        { showCard ? <CardInfo key={showCard.id} creds={creds} card={showCard} getCards={getCards} setLoading={setLoading} setShowCard={setShowCard} /> : 
+          <h2>Choose a card!</h2> }
       </div>
     </div>
   );
