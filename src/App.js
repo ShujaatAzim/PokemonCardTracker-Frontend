@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="header">
-        <NavBar user={user} setUser={setUser} setSet={setSet} />
+        <NavBar user={user} set={set} setUser={setUser} setSet={setSet} />
       </div>
       <div className="body">
         { user && user.logged === true ? 
