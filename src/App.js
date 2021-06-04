@@ -4,6 +4,7 @@ import HomePage from './Pages/HomePage';
 import NotFoundPage from './Pages/NotFoundPage';
 import LoginPage from './Pages/LoginPage';
 import ProfilePage from './Pages/ProfilePage';
+import RegistrationPage from './Pages/RegistrationPage';
 import NavBar from './Components/NavBar';
 
 const App = () => {
@@ -21,12 +22,14 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={() => <HomePage set={set} setSet={setSet} />} />
           <Route exact path="/profile" component={ProfilePage}  />
+          <Route exact path="/register" component={RegistrationPage} />
           <Route component={NotFoundPage} />
         </Switch>
         :
         <Switch>
           <Route exact path="/" component={() => <LoginPage setUser={setUser} />} />
           <Route exact path="/login" component={() => <LoginPage setUser={setUser} />} />
+          <Route exact path="/register" component={RegistrationPage} />
           <Route component={NotFoundPage} />
         </Switch>
         }

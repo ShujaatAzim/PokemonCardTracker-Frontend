@@ -43,6 +43,8 @@ const LoginPage = props => {
         </Form.Field>
         <Button type='submit'>Submit</Button>
       </Form>
+      <h4>-- OR --</h4>
+      <Button onClick={() => history.push('/register')}>Register</Button>
     </div>
   );
 }
