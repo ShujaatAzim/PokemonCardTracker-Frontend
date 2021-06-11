@@ -328,4 +328,144 @@ export const PokemonCards = [
     "quantity": 0,
     "notes": ""
   },
+  {
+    "name": "Alakazam",
+    "image": "https://images.pokemontcg.io/base5/1_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Blastoise",
+    "image": "https://images.pokemontcg.io/base5/2_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Chansey",
+    "image": "https://images.pokemontcg.io/base5/3_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Charizard",
+    "image": "https://images.pokemontcg.io/base5/4_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Clefable",
+    "image": "https://images.pokemontcg.io/base5/5_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Clefairy",
+    "image": "https://images.pokemontcg.io/base5/6_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Gyarados",
+    "image": "https://images.pokemontcg.io/base5/7_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Hitmonchan",
+    "image": "https://images.pokemontcg.io/base5/8_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Magneton",
+    "image": "https://images.pokemontcg.io/base5/9_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Mewtwo",
+    "image": "https://images.pokemontcg.io/base5/10_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Nidoking",
+    "image": "https://images.pokemontcg.io/base5/11_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Nidoqueen",
+    "image": "https://images.pokemontcg.io/base5/12_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Ninetales",
+    "image": "https://images.pokemontcg.io/base5/13_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Pidgeot",
+    "image": "https://images.pokemontcg.io/base5/14_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Poliwrath",
+    "image": "https://images.pokemontcg.io/base5/15_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Raichu",
+    "image": "https://images.pokemontcg.io/base5/16_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Scyther",
+    "image": "https://images.pokemontcg.io/base5/17_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Venusaur",
+    "image": "https://images.pokemontcg.io/base5/18_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Wigglytuff",
+    "image": "https://images.pokemontcg.io/base5/19_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
+  {
+    "name": "Zapdos",
+    "image": "https://images.pokemontcg.io/base5/20_hires.png",
+    "set": "base2",
+    "quantity": 0,
+    "notes": ""
+  },
 ]

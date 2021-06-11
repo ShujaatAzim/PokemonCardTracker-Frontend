@@ -18,7 +18,7 @@ const NavBar = props => {
   return (
     user && user.logged === true ? 
     <Menu secondary>
-      <Menu.Item header>
+      <Menu.Item header onClick={() => setSet("")}>
           <h3><b>PokéBook</b></h3>
       </Menu.Item>
       <Menu.Item name="Home" onClick={() => history.push("/")} disabled={location.pathname === "/"}/>
@@ -28,6 +28,13 @@ const NavBar = props => {
           <Dropdown.Item onClick={() => setSet("base")} disabled={set === "base"}>Base Set</Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("jungle")} disabled={set === "jungle"}>Jungle</Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("fossil")} disabled={set === "fossil"}>Fossil</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSet("rocket")} disabled={set === "rocket"}>Team Rocket</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSet("heroes")} disabled={set === "heroes"}>Gym Heroes</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSet("challenge")} disabled={set === "challenge"}>Gym Challenge</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSet("genesis")} disabled={set === "genesis"}>Neo Genesis</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSet("discovery")} disabled={set === "discovery"}>Neo Discovery</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSet("revelations")} disabled={set === "revelations"}>Neo Revelations</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSet("destiny")} disabled={set === "destiny"}>Neo Destiny</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
       <Menu.Menu position="right">

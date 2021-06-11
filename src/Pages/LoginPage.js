@@ -27,7 +27,7 @@ const LoginPage = props => {
     .then(resp => resp.json())
     .then(data => localStorage.setItem("trackerCreds", JSON.stringify(data)))
     .then(() => props.setUser(JSON.parse(localStorage.getItem("trackerCreds"))))
-    .then(() => history.push('/profile'))
+    .then(() => history.push("/"))
   }
 
   return (
