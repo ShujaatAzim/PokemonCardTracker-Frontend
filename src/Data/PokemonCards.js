@@ -24,7 +24,6 @@ export const PokemonCards = [
     "name": "Charizard",
     "image": "https://images.pokemontcg.io/base1/4_hires.png",
     "set": "base",
-    "owned": true,
     "quantity": 0,
     "notes": ""
   },

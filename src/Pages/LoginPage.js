@@ -32,6 +32,10 @@ const LoginPage = props => {
 
   return (
     <div style={{ textAlign: "center", marginLeft: "30rem", marginRight: "30rem" }}>
+      <h2>Welcome to PokéBook!</h2>
+      <h4>Please log in to continue:</h4>
+      <br />
+      <br />
       <Form onSubmit={e => handleLogin(e)}>
         <Form.Field>
           <label>Username</label>
@@ -41,10 +45,13 @@ const LoginPage = props => {
           <label>Password</label>
           <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/>
         </Form.Field>
-        <Button type='submit'>Submit</Button>
+        <br />
+        <Button color="blue" type='submit'>Submit</Button>
       </Form>
+      <br />
       <h4>-- OR --</h4>
-      <Button onClick={() => history.push('/register')}>Register</Button>
+      <br />
+      <Button color="blue" onClick={() => history.push('/register')}>Register</Button>
     </div>
   );
 }

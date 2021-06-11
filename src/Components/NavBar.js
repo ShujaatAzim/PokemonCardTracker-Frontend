@@ -19,7 +19,7 @@ const NavBar = props => {
     user && user.logged === true ? 
     <Menu secondary>
       <Menu.Item header>
-          <h3><b>Pokemon Card Tracker!</b></h3>
+          <h3><b>PokéBook</b></h3>
       </Menu.Item>
       <Menu.Item name="Home" onClick={() => history.push("/")} disabled={location.pathname === "/"}/>
       <Menu.Item name="Profile" onClick={() => history.push("/profile")} disabled={location.pathname === "/profile"}/>
@@ -37,9 +37,9 @@ const NavBar = props => {
     :
     <Menu secondary>
       <Menu.Item header>
-          <h3><b>Pokemon Card Tracker!</b></h3>
+          <h3><b>PokéBook</b></h3>
       </Menu.Item>
-      <Menu.Item name="Login" onClick={() => history.push("/login")} />
+      <Menu.Item name="Login" onClick={() => history.push("/login")} disabled={location.pathname === "/login" || location.pathname === "/" } />
     </Menu>
   );
 }

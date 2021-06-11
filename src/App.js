@@ -22,14 +22,14 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={() => <HomePage set={set} setSet={setSet} />} />
           <Route exact path="/profile" component={ProfilePage}  />
-          <Route exact path="/register" component={RegistrationPage} />
+          <Route exact path="/register" component={() => <RegistrationPage setUser={setUser} />} />
           <Route component={NotFoundPage} />
         </Switch>
         :
         <Switch>
           <Route exact path="/" component={() => <LoginPage setUser={setUser} />} />
           <Route exact path="/login" component={() => <LoginPage setUser={setUser} />} />
-          <Route exact path="/register" component={RegistrationPage} />
+          <Route exact path="/register" component={() => <RegistrationPage setUser={setUser} />} />
           <Route component={NotFoundPage} />
         </Switch>
         }
