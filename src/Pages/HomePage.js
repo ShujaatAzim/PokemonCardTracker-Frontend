@@ -3,6 +3,7 @@ import { useRecoilState } from 'recoil';
 import { cardsState } from '../Recoil/atoms';
 import Card from '../Components/Card';
 import CardInfo from '../Components/CardInfo';
+import { Button } from 'semantic-ui-react';
 
 const HomePage = props => {
 
@@ -29,7 +30,14 @@ const HomePage = props => {
   }
 
   return (
-    loading ? <div>Loading...</div> : 
+    loading ? <div>Loading...</div> : props.set === "" ? 
+    <div style={{ textAlign: "center", marginTop: "2rem" }}>
+      <h1>Welcome, {creds.username}!</h1>
+      <h4>Choose a set:</h4>
+      <Button onClick={() => props.setSet("base")}>Base Set</Button>
+      <Button onClick={() => props.setSet("jungle")}>Jungle</Button>
+      <Button onClick={() => props.setSet("fossil")}>Fossil</Button>
+    </div> :
     <div style={{ display: "flex" }}>
       <div style={{ width: "65%" }}>
         {cards.filter(card => card.set === props.set).map(card => <Card key={card.id} card={card} setShowCard={setShowCard} />)}

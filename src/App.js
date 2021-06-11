@@ -10,7 +10,7 @@ import NavBar from './Components/NavBar';
 const App = () => {
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("trackerCreds")))
-  const [set, setSet] = useState("base") 
+  const [set, setSet] = useState("") 
 
   return (
     <div className="app">
