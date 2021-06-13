@@ -32,7 +32,7 @@ const LoginPage = props => {
 
   return (
     <div style={{ textAlign: "center", marginLeft: "30rem", marginRight: "30rem" }}>
-      <img src="https://fontmeme.com/permalink/210611/2d474eb06d50b431579fb1de6bfea5b0.png" alt="pokebook" border="0" />
+      <img src="https://fontmeme.com/permalink/210612/680c3a9e420df05eff3e08d6937137d0.png" alt="pokebook" border="0" />
       <h4>Please log in to continue:</h4>
       <br />
       <br />

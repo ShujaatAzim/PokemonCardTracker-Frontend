@@ -1,6 +1,10 @@
 .app {
   background-color: lightcyan;
 }
+#set-button {
+  margin: 1rem;
+  padding: 1rem;
+}
 
 .header {
   min-height: 8vh;

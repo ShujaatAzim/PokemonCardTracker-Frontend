@@ -34,7 +34,7 @@ const RegistrationPage = props => {
 
   return (
     <div style={{ textAlign: "center", marginLeft: "30rem", marginRight: "30rem" }}>
-      <h2>Welcome to PokéBook!</h2>
+      <img src="https://fontmeme.com/permalink/210612/680c3a9e420df05eff3e08d6937137d0.png" alt="pokebook" border="0" />
       <h4>Please register:</h4>
       <br />
       <br />

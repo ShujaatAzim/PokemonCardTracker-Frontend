@@ -11,6 +11,7 @@ const NavBar = props => {
 
   const handleLogout = () => {
     localStorage.removeItem("trackerCreds")
+    setSet("")
     setUser(null)
     history.push('/')
   }
@@ -19,7 +20,7 @@ const NavBar = props => {
     user && user.logged === true ? 
     <Menu secondary>
       <Menu.Item header onClick={() => setSet("")}>
-          <h3><b>PokéBook</b></h3>
+        <img src="https://fontmeme.com/permalink/210611/1437c0f4f84aa2f68907080980c55ada.png" alt="pokemon-font" border="0" />
       </Menu.Item>
       <Menu.Item name="Home" onClick={() => history.push("/")} disabled={location.pathname === "/"}/>
       <Menu.Item name="Profile" onClick={() => history.push("/profile")} disabled={location.pathname === "/profile"}/>
@@ -44,7 +45,7 @@ const NavBar = props => {
     :
     <Menu secondary>
       <Menu.Item header>
-          <h3><b>PokéBook</b></h3>
+        <img src="https://fontmeme.com/permalink/210611/1437c0f4f84aa2f68907080980c55ada.png" alt="pokemon-font" border="0" />
       </Menu.Item>
       <Menu.Item name="Login" onClick={() => history.push("/login")} disabled={location.pathname === "/login" || location.pathname === "/" } />
     </Menu>
