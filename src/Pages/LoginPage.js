@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Form, Button } from 'semantic-ui-react';
+import url from "../urlHelper";
 
 const LoginPage = props => {
 
@@ -16,7 +17,7 @@ const LoginPage = props => {
       "password": password
     }
 
-    fetch('http://localhost:3000/login', {
+    fetch(`${url}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

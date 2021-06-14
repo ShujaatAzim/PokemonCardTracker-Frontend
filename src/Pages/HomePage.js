@@ -5,6 +5,7 @@ import Card from '../Components/Card';
 import CardInfo from '../Components/CardInfo';
 import SetButtonsScreen from '../Components/SetButtonsScreen';
 import LoadingScreen from '../Components/LoadingScreen';
+import url from "../urlHelper";
 
 const HomePage = props => {
 
@@ -21,7 +22,7 @@ const HomePage = props => {
   }, [])
 
   const getCards = () => {
-    fetch('http://localhost:3000/cards', {
+    fetch(`${url}/cards`, {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${creds.jwt}`

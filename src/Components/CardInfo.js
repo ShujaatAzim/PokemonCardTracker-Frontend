@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Form, TextArea, Button } from 'semantic-ui-react';
 import swal from 'sweetalert';
+import url from "../urlHelper";
+
 
 const CardInfo = props => {
 
@@ -15,7 +17,7 @@ const CardInfo = props => {
       quantity: quantity,
       notes: notes
     }
-    fetch(`http://localhost:3000/cards/${card.id}`, {
+    fetch(`${url}/cards/${card.id}`, {
       method: "PATCH",
       headers: {
         "Authorization": `Bearer ${props.creds.jwt}`,

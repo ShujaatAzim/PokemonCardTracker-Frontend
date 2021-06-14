@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Form, Button } from 'semantic-ui-react';
 import { PokemonCards } from '../Data/PokemonCards';
+import url from "../urlHelper";
 
 const RegistrationPage = props => {
 
@@ -18,7 +19,7 @@ const RegistrationPage = props => {
       "cards_attributes": PokemonCards
     }
 
-    fetch('http://localhost:3000/users', {
+    fetch(`${url}/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
