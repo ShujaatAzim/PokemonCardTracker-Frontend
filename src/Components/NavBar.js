@@ -19,7 +19,7 @@ const NavBar = props => {
   return (
     user && user.logged === true ? 
     <Menu secondary>
-      <Menu.Item header onClick={() => setSet("")}>
+      <Menu.Item header onClick={() => {setSet("");history.push("/")}}>
         <img src="https://fontmeme.com/permalink/210611/1437c0f4f84aa2f68907080980c55ada.png" alt="pokemon-font" border="0" />
       </Menu.Item>
       <Menu.Item name="Home" onClick={() => history.push("/")} disabled={location.pathname === "/"}/>
@@ -29,6 +29,7 @@ const NavBar = props => {
           <Dropdown.Item onClick={() => setSet("base")} disabled={set === "base"}>Base Set</Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("jungle")} disabled={set === "jungle"}>Jungle</Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("fossil")} disabled={set === "fossil"}>Fossil</Dropdown.Item>
+          <Dropdown.Item onClick={() => setSet("base2")} disabled={set === "base2"}>Base Set 2</Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("rocket")} disabled={set === "rocket"}>Team Rocket</Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("heroes")} disabled={set === "heroes"}>Gym Heroes</Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("challenge")} disabled={set === "challenge"}>Gym Challenge</Dropdown.Item>

@@ -16,6 +16,7 @@ const SetButtonsScreen = props => {
         <Button id="set-button" color="blue" size="large" onClick={() => setSet("base")}>Base Set</Button>
         <Button id="set-button" color="green" size="large" onClick={() => setSet("jungle")}>Jungle</Button>
         <Button id="set-button" color="brown" size="large" onClick={() => setSet("fossil")}>Fossil</Button>
+        <Button id="set-button" color="blue" size="large" onClick={() => setSet("base2")}>Base Set 2</Button>
       </div>
       <div>
         <Button id="set-button" color="black" size="large" onClick={() => setSet("rocket")}>Team Rocket</Button>
