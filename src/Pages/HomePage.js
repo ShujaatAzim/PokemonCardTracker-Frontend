@@ -39,7 +39,7 @@ const HomePage = props => {
       <div style={{ width: "65%", marginTop: "1rem" }}>
         {cards.filter(card => card.set === set).map(card => <Card key={card.id} card={card} setShowCard={setShowCard} />)}
       </div>
-      <div style={{ width: "35%" }}>
+      <div style={{ width: "35%", position: "fixed", marginLeft: "65vw" }}>
         {showCard ? <CardInfo key={showCard.id} creds={creds} card={showCard} getCards={getCards} setLoading={setLoading} setShowCard={setShowCard} /> : 
           <h2>Choose a card!</h2> }
       </div>
