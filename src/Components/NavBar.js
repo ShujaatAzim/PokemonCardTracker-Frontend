@@ -7,7 +7,7 @@ const NavBar = props => {
   let history = useHistory();
   let location = useLocation();
   
-  const { user, set, setUser, setSet } = props;
+  const { user, set, setUser, setSet, setName } = props;
 
   const handleLogout = () => {
     localStorage.removeItem("trackerCreds")
@@ -26,17 +26,17 @@ const NavBar = props => {
       <Menu.Item name="Profile" onClick={() => history.push("/profile")} disabled={location.pathname === "/profile"}/>
       <Dropdown item text="Sets" disabled={location.pathname === "/profile"}>
         <Dropdown.Menu>
-          <Dropdown.Item onClick={() => setSet("base")} disabled={set === "base"}>Base Set</Dropdown.Item>
-          <Dropdown.Item onClick={() => setSet("jungle")} disabled={set === "jungle"}>Jungle</Dropdown.Item>
-          <Dropdown.Item onClick={() => setSet("fossil")} disabled={set === "fossil"}>Fossil</Dropdown.Item>
-          <Dropdown.Item onClick={() => setSet("base2")} disabled={set === "base2"}>Base Set 2</Dropdown.Item>
-          <Dropdown.Item onClick={() => setSet("rocket")} disabled={set === "rocket"}>Team Rocket</Dropdown.Item>
-          <Dropdown.Item onClick={() => setSet("heroes")} disabled={set === "heroes"}>Gym Heroes</Dropdown.Item>
-          <Dropdown.Item onClick={() => setSet("challenge")} disabled={set === "challenge"}>Gym Challenge</Dropdown.Item>
-          <Dropdown.Item onClick={() => setSet("genesis")} disabled={set === "genesis"}>Neo Genesis</Dropdown.Item>
-          <Dropdown.Item onClick={() => setSet("discovery")} disabled={set === "discovery"}>Neo Discovery</Dropdown.Item>
-          <Dropdown.Item onClick={() => setSet("revelations")} disabled={set === "revelations"}>Neo Revelations</Dropdown.Item>
-          <Dropdown.Item onClick={() => setSet("destiny")} disabled={set === "destiny"}>Neo Destiny</Dropdown.Item>
+          <Dropdown.Item onClick={() => {setSet("base");setName("Base Set")}} disabled={set === "base"}>Base Set</Dropdown.Item>
+          <Dropdown.Item onClick={() => {setSet("jungle");setName("Jungle Set")}} disabled={set === "jungle"}>Jungle</Dropdown.Item>
+          <Dropdown.Item onClick={() => {setSet("fossil");setName("Fossil Set")}} disabled={set === "fossil"}>Fossil</Dropdown.Item>
+          <Dropdown.Item onClick={() => {setSet("base2");setName("Base Set 2")}} disabled={set === "base2"}>Base Set 2</Dropdown.Item>
+          <Dropdown.Item onClick={() => {setSet("rocket");setName("Team Rocket Set")}} disabled={set === "rocket"}>Team Rocket</Dropdown.Item>
+          <Dropdown.Item onClick={() => {setSet("heroes");setName("Gym Heroes Set")}} disabled={set === "heroes"}>Gym Heroes</Dropdown.Item>
+          <Dropdown.Item onClick={() => {setSet("challenge");setName("Gym Challenge Set")}} disabled={set === "challenge"}>Gym Challenge</Dropdown.Item>
+          <Dropdown.Item onClick={() => {setSet("genesis");setName("Neo Genesis Set")}} disabled={set === "genesis"}>Neo Genesis</Dropdown.Item>
+          <Dropdown.Item onClick={() => {setSet("discovery");setName("Neo Discovery Set")}} disabled={set === "discovery"}>Neo Discovery</Dropdown.Item>
+          <Dropdown.Item onClick={() => {setSet("revelations");setName("Neo Revelations Set")}} disabled={set === "revelations"}>Neo Revelations</Dropdown.Item>
+          <Dropdown.Item onClick={() => {setSet("destiny");setName("Neo Destiny Set")}} disabled={set === "destiny"}>Neo Destiny</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
       <Menu.Menu position="right">
