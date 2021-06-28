@@ -5,7 +5,7 @@ const ProfilePage = () => {
   const creds = JSON.parse(localStorage.getItem("trackerCreds"))
 
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <p>
         name: {creds.username}
       </p>
