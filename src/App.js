@@ -11,17 +11,16 @@ const App = () => {
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("trackerCreds")))
   const [set, setSet] = useState("")
-  const [name, setName] = useState(null)
 
   return (
     <div className="app">
       <div className="header">
-        <NavBar user={user} set={set} setUser={setUser} setSet={setSet} setName={setName} />
+        <NavBar user={user} set={set} setUser={setUser} setSet={setSet} />
       </div>
       <div className="body">
         { user && user.logged === true ? 
         <Switch>
-          <Route exact path="/" component={() => <HomePage set={set} setSet={setSet} name={name} setName={setName}/>} />
+          <Route exact path="/" component={() => <HomePage set={set} setSet={setSet} />} />
           <Route exact path="/profile" component={ProfilePage}  />
           <Route exact path="/register" component={() => <RegistrationPage setUser={setUser} />} />
           <Route component={NotFoundPage} />
