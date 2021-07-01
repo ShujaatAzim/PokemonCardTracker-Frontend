@@ -13,6 +13,7 @@ const ProfilePage = () => {
         token: {creds.jwt}
       </p>
     </div>
+    
   );
 }
 
