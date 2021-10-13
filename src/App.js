@@ -24,7 +24,7 @@ const App = () => {
           <Route exact path="/" component={() => <HomePage set={set} setSet={setSet} />} />
           <Route exact path="/profile" component={ProfilePage}  />
           <Route exact path="/register" component={() => <RegistrationPage setUser={setUser} />} />
-          <Route exact path="/users/:id" component={() => <CollectionPage />} />
+          <Route exact path="/:id" component={() => <CollectionPage set={set} setSet={setSet} />} />
           <Route component={NotFoundPage} />
         </Switch>
         :
@@ -32,7 +32,7 @@ const App = () => {
           <Route exact path="/" component={() => <LoginPage setUser={setUser} />} />
           <Route exact path="/login" component={() => <LoginPage setUser={setUser} />} />
           <Route exact path="/register" component={() => <RegistrationPage setUser={setUser} />} />
-          <Route exact path="/users/:id" component={() => <CollectionPage />} />
+          <Route exact path="/:id" component={() => <CollectionPage set={set} setSet={setSet} />} />
           <Route component={NotFoundPage} />
         </Switch>
         }
