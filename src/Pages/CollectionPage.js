@@ -5,10 +5,9 @@ import SetButtonsScreen from '../Components/SetButtonsScreen';
 import Card from '../Components/Card';
 import url from "../urlHelper";
 
-const CollectionPage = props => {
+const CollectionPage = () => {
 
   const { id } = useParams();
-  const { set, setSet } = props;
 
   const [loading, setLoading] = useState(true)
   const [cards, setCards] = useState([])
@@ -26,7 +25,7 @@ const CollectionPage = props => {
   }
 
   return (
-    loading ? <LoadingScreen /> : set === "" ? <SetButtonsScreen setSet={setSet} /> :
+    loading ? <LoadingScreen /> : 
       <div style={{ display: "flex" }}>
         <div style={{ width: "65%" }}>
           {cards.filter(card => card.set === set).map(card => <Card key={card.id} card={card} unclickable={true} />)}
