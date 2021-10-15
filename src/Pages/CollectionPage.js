@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import LoadingScreen from '../Components/LoadingScreen';
-import SetButtonsScreen from '../Components/SetButtonsScreen';
 import Card from '../Components/Card';
 import url from "../urlHelper";
 
@@ -25,6 +24,8 @@ const CollectionPage = () => {
   }
 
   return (
+    // need dedicated options here for navbar
+    // also need some conditionals based on logged in status
     loading ? <LoadingScreen /> : 
       <div style={{ display: "flex" }}>
         <div style={{ width: "65%" }}>
