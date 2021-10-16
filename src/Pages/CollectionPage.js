@@ -26,6 +26,7 @@ const CollectionPage = () => {
   return (
     // need dedicated options here for navbar
     // also need some conditionals based on logged in status
+    // new screens alone or same template? dropdowns for set?
     loading ? <LoadingScreen /> : 
       <div style={{ display: "flex" }}>
         <div style={{ width: "65%" }}>
