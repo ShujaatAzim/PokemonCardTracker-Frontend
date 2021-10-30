@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router';
+import { Button } from 'semantic-ui-react';
 
 const NotFoundPage = () => {
 
@@ -8,7 +9,7 @@ const NotFoundPage = () => {
   return (
     <div>
       <p>Page Not Found!</p>
-      <button onClick={() => history.push('/')}>Home</button>
+      <Button color="blue" type='submit'>Submit</Button>
     </div>
   );
 }
