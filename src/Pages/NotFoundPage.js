@@ -9,7 +9,7 @@ const NotFoundPage = () => {
   return (
     <div>
       <p>Page Not Found!</p>
-      <Button color="blue" type='submit'>Submit</Button>
+      <Button color="blue" type='submit' onClick={() => history.push('/')}>Submit</Button>
     </div>
   );
 }
