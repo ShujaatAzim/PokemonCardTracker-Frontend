@@ -5,6 +5,7 @@ import { Button } from 'semantic-ui-react';
 const NotFoundPage = () => {
 
   let history = useHistory();
+  
 
   return (
     <div>
