@@ -4,6 +4,8 @@ const ProfilePage = () => {
 
   const creds = JSON.parse(localStorage.getItem("trackerCreds"))
 
+  // profile page should have generic card info
+
   return (
     <div style={{ textAlign: "center" }}>
       <p>
@@ -13,7 +15,6 @@ const ProfilePage = () => {
         token: {creds.jwt}
       </p>
     </div>
-    
   );
 }
 
