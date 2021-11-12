@@ -12,25 +12,28 @@ const RegistrationPage = props => {
   let history = useHistory();
 
   const handleRegistration = e => {
-    e.preventDefault();
-    let newUser = {
-      "username": username,
-      "password": password,
-      "cards_attributes": PokemonCards
-    }
 
-    fetch(`${url}/users`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({ user: newUser })
-    })
-    .then(resp => resp.json())
-    .then(data => localStorage.setItem("trackerCreds", JSON.stringify(data)))
-    .then(() => props.setUser(JSON.parse(localStorage.getItem("trackerCreds"))))
-    .then(() => history.push('/profile'))
+    // need to add alerts for user creation failure
+
+    e.preventDefault();
+      let newUser = {
+        "username": username,
+        "password": password,
+        "cards_attributes": PokemonCards
+      }
+
+      fetch(`${url}/users`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({ user: newUser })
+      })
+      .then(resp => resp.json())
+      .then(data => localStorage.setItem("trackerCreds", JSON.stringify(data)))
+      .then(() => props.setUser(JSON.parse(localStorage.getItem("trackerCreds"))))
+      .then(() => history.push('/profile'))
   }
 
   return (

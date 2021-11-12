@@ -6,7 +6,7 @@ import url from "../urlHelper";
 
 const CollectionPage = () => {
 
-  const { id } = useParams();
+  const { id, set } = useParams();
 
   const [loading, setLoading] = useState(true)
   const [cards, setCards] = useState([])
