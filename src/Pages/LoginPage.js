@@ -32,6 +32,7 @@ const LoginPage = props => {
   }
 
   // need to add validations for username uniqueness
+  // instead of just on backend?
 
   return (
     <div style={{ textAlign: "center", marginLeft: "30rem", marginRight: "30rem" }}>
