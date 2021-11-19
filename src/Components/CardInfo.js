@@ -3,7 +3,6 @@ import { Form, TextArea, Button } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import url from "../urlHelper";
 
-
 const CardInfo = props => {
 
   const { card } = props
