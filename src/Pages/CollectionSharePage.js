@@ -4,6 +4,9 @@ import LoadingScreen from '../Components/LoadingScreen';
 import ShowCard from '../Components/ShowCard';
 import url from "../urlHelper";
 
+// need to copy the regular one, essentially, but make it static.
+// also needs its own nav bar when not logged in.
+
 const CollectionSharePage = props => {
   
   const { set, setSet } = props;
