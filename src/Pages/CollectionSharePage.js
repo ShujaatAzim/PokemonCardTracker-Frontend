@@ -6,6 +6,7 @@ import url from "../urlHelper";
 
 // need to copy the regular one, essentially, but make it static.
 // also needs its own nav bar when not logged in.
+// and maybe a separate window when clicking link?
 
 const CollectionSharePage = props => {
   
