@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import NotFoundPage from './Pages/NotFoundPage';
 import LoginPage from './Pages/LoginPage';
@@ -8,17 +8,22 @@ import RegistrationPage from './Pages/RegistrationPage';
 import CollectionPage from './Pages/CollectionPage';
 import CollectionSharePage from './Pages/CollectionSharePage';
 import NavBar from './Components/NavBar';
+import NavBarShare from './Components/NavBarShare';
 
 const App = () => {
 
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("trackerCreds")))
   const [set, setSet] = useState("")
 
+  const location = useLocation();
+
   return (
     <div className="app">
       <div className="header">
-        <NavBar user={user} set={set} setUser={setUser} setSet={setSet} />
-        {/* add new navbar for collectiton share page when not logged in? would need conditional */}
+        { location.pathname.indexOf("collection") > - 1 ? 
+          <NavBarShare set={set} setSet={setSet} /> :
+          <NavBar user={user} set={set} setUser={setUser} setSet={setSet} />
+        }
       </div>
       <div className="body">
         { user && user.logged === true ? 
