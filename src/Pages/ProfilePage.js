@@ -8,12 +8,9 @@ const ProfilePage = () => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <p>
-        name: {creds.username}
-      </p>
-      <p>
-        token: {creds.jwt}
-      </p>
+      <h1>{creds.username}'s Profile</h1>
+      <h3>Share your collection with this link!</h3>
+      <h3>https://pokebook.shujaatazim.com/collection/{creds.id}</h3>
     </div>
   );
 }

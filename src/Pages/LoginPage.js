@@ -31,9 +31,7 @@ const LoginPage = props => {
     .then(() => history.push("/"))
   }
 
-  // need to add validations for username uniqueness
-  // instead of just on backend?
-
+  // need to add validations for username uniqueness instead of just on backend?
   // also need to add instructions for logging in with test account, maybe a "try it now" button?
 
   return (
