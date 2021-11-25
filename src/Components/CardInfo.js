@@ -34,7 +34,7 @@ const CardInfo = props => {
   return (
     <div>
       <h2>{card.name}</h2>
-      <img src={card.image} alt={card.name} style={{ height: "20rem" }}/>
+      <img className="show-card" src={card.image} alt={card.name} style={{ height: "20rem" }}/>
       <br />
       <h4>Quantity: {" " + quantity }</h4>
       <Button color="green" onClick={() => {setQuantity(quantity + 1);setUpdated(true)}}>+</Button>

@@ -5,7 +5,6 @@ import NotFoundPage from './Pages/NotFoundPage';
 import LoginPage from './Pages/LoginPage';
 import ProfilePage from './Pages/ProfilePage';
 import RegistrationPage from './Pages/RegistrationPage';
-import CollectionPage from './Pages/CollectionPage';
 import CollectionSharePage from './Pages/CollectionSharePage';
 import NavBar from './Components/NavBar';
 import NavBarShare from './Components/NavBarShare';
@@ -31,7 +30,6 @@ const App = () => {
           <Route exact path="/" component={() => <HomePage set={set} setSet={setSet} />} />
           <Route exact path="/profile" component={ProfilePage}  />
           <Route exact path="/register" component={() => <RegistrationPage setUser={setUser} />} />
-          <Route exact path="/:id" component={() => <CollectionPage set={set} setSet={setSet} />} />
           <Route exact path="/collection/:id" component={() => <CollectionSharePage set={set} setSet={setSet} />} />
           <Route component={NotFoundPage} />
         </Switch>
@@ -40,7 +38,6 @@ const App = () => {
           <Route exact path="/" component={() => <LoginPage setUser={setUser} />} />
           <Route exact path="/login" component={() => <LoginPage setUser={setUser} />} />
           <Route exact path="/register" component={() => <RegistrationPage setUser={setUser} />} />
-          <Route exact path="/:id" component={() => <CollectionPage set={set} setSet={setSet} />} />
           <Route exact path="/collection/:id" component={() => <CollectionSharePage set={set} setSet={setSet} />} />
           <Route component={NotFoundPage} />
         </Switch>

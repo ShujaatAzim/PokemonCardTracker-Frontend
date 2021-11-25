@@ -9,6 +9,14 @@
   padding: 1rem;
 }
 
+/* .card:hover {
+  transform: scale(1.1);
+}
+
+.show-card:hover {
+  transform: scale(1.1);
+} */
+
 .header {
   min-height: 8vh;
 }
