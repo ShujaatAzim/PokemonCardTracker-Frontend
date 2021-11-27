@@ -31,13 +31,34 @@ const LoginPage = props => {
     .then(() => history.push("/"))
   }
 
+  const testLogin = e => {
+    e.preventDefault();
+    let loginCredentials = {
+      "username": "test",
+      "password": "test"
+    }
+
+    fetch(`${url}/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({ user: loginCredentials })
+    })
+    .then(resp => resp.json())
+    .then(data => localStorage.setItem("trackerCreds", JSON.stringify(data)))
+    .then(() => props.setUser(JSON.parse(localStorage.getItem("trackerCreds"))))
+    .then(() => history.push("/"))
+  }
+
   // need to add validations for username uniqueness instead of just on backend?
   // also need to add instructions for logging in with test account, maybe a "try it now" button?
 
   return (
     <div style={{ textAlign: "center", marginLeft: "30rem", marginRight: "30rem" }}>
       <img src="https://fontmeme.com/permalink/210612/680c3a9e420df05eff3e08d6937137d0.png" alt="pokebook" border="0" />
-      <h4>Please log in to continue:</h4>
+      <h4>Please log in, or click Try It to play around with the app!</h4>
       <br />
       <br />
       <Form onSubmit={e => handleLogin(e)}>
@@ -56,6 +77,7 @@ const LoginPage = props => {
       <h4>-- OR --</h4>
       <br />
       <Button color="blue" onClick={() => history.push('/register')}>Register</Button>
+      <Button color="blue" onClick={e => testLogin(e)}>Try It!</Button>
     </div>
   );
 }
