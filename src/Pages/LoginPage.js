@@ -34,7 +34,7 @@ const LoginPage = props => {
   const testLogin = e => {
     e.preventDefault();
     let loginCredentials = {
-      "username": "test",
+      "username": "Test",
       "password": "test"
     }
 

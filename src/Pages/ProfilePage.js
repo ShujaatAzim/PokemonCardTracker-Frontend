@@ -31,7 +31,7 @@ const ProfilePage = () => {
       <h3>https://pokebook.shujaatazim.com/collection/{creds.id}</h3>
       <br />
       <div>
-        { creds.username !== "test" ? <Button color="red" onClick={e => deleteAccount(e)}>Delete Account</Button> : null }
+        { creds.username !== "Test" ? <Button color="red" onClick={e => deleteAccount(e)}>Delete Account</Button> : null }
       </div>
     </div>
   );
