@@ -22,17 +22,42 @@ const ProfilePage = () => {
     .then(() => history.push('/'))
   }
 
-  // profile page should have generic card info
+  let ownedCards = creds.cards.filter(card => card.quantity > 0)
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center", alignContent: "center" }}>
       <h1>{creds.username}'s Profile</h1>
       <h3>Share your collection with this link!</h3>
       <h3>https://pokebook.shujaatazim.com/collection/{creds.id}</h3>
       <br />
       <div>
-        {/* something in here, maybe a list of numbers of cards from each set owned? */}
+        <h5>
+          Base Set: {ownedCards.filter(card => card.set === "Base Set").length} / 16 || 
+          Jungle Set: {ownedCards.filter(card => card.set === "Jungle").length} / 16
+        </h5>
+        <h5>
+          Fossil Set: {ownedCards.filter(card => card.set === "Fossil").length} / 15 || 
+          Base Set 2: {ownedCards.filter(card => card.set === "Base Set 2").length} / 20
+        </h5>
+        <h5>
+          Team Rocket Set: {ownedCards.filter(card => card.set === "Team Rocket").length} / 17 || 
+          Gym Heroes Set: {ownedCards.filter(card => card.set === "Gym Heroes").length} /19
+        </h5>
+        <h5>
+          Gym Challenge Set: {ownedCards.filter(card => card.set === "Gym Challenge").length} / 20 || 
+          Neo Genesis Set: {ownedCards.filter(card => card.set === "Neo Genesis").length} / 19
+        </h5>
+        <h5>
+          Neo Discovery Set: {ownedCards.filter(card => card.set === "Neo Discovery").length} / 17 || 
+          Neo Revelations Set: {ownedCards.filter(card => card.set === "Neo Revelations").length} / 14
+        </h5>
+        <h5>
+          Neo Destiny Set: {ownedCards.filter(card => card.set === "Neo Destiny").length} / 24 || 
+          Total Cards: {ownedCards.length} / {creds.cards.length}
+        </h5>
       </div>
+      <br />
+      <br />
       <div>
         { creds.username !== "Test" ? <Button color="red" onClick={e => deleteAccount(e)}>Delete Account</Button> : null }
       </div>

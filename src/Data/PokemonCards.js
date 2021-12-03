@@ -1702,7 +1702,7 @@ export const PokemonCards = [
   },
   {
     "name": "Shining Celebi",
-    "image": "https://images.pokemontcg.io/neo4/1_hires.png",
+    "image": "https://images.pokemontcg.io/neo4/106_hires.png",
     "set": "Neo Destiny",
     "card_number": 106,
     "quantity": 0,
@@ -1711,7 +1711,7 @@ export const PokemonCards = [
   },
   {
     "name": "Shining Charizard",
-    "image": "https://images.pokemontcg.io/neo4/2_hires.png",
+    "image": "https://images.pokemontcg.io/neo4/107_hires.png",
     "set": "Neo Destiny",
     "card_number": 107,
     "quantity": 0,
@@ -1720,7 +1720,7 @@ export const PokemonCards = [
   },
   {
     "name": "Shining Kabutops",
-    "image": "https://images.pokemontcg.io/neo4/3_hires.png",
+    "image": "https://images.pokemontcg.io/neo4/108_hires.png",
     "set": "Neo Destiny",
     "card_number": 108,
     "quantity": 0,
@@ -1729,7 +1729,7 @@ export const PokemonCards = [
   },
   {
     "name": "Shining Mewtwo",
-    "image": "https://images.pokemontcg.io/neo4/4_hires.png",
+    "image": "https://images.pokemontcg.io/neo4/109_hires.png",
     "set": "Neo Destiny",
     "card_number": 109,
     "quantity": 0,
@@ -1738,7 +1738,7 @@ export const PokemonCards = [
   },
   {
     "name": "Shining Noctowl",
-    "image": "https://images.pokemontcg.io/neo4/5_hires.png",
+    "image": "https://images.pokemontcg.io/neo4/110_hires.png",
     "set": "Neo Destiny",
     "card_number": 110,
     "quantity": 0,
@@ -1747,7 +1747,7 @@ export const PokemonCards = [
   },
   {
     "name": "Shining Raichu",
-    "image": "https://images.pokemontcg.io/neo4/6_hires.png",
+    "image": "https://images.pokemontcg.io/neo4/111_hires.png",
     "set": "Neo Destiny",
     "card_number": 111,
     "quantity": 0,
@@ -1756,7 +1756,7 @@ export const PokemonCards = [
   },
   {
     "name": "Shining Steelix",
-    "image": "https://images.pokemontcg.io/neo4/7_hires.png",
+    "image": "https://images.pokemontcg.io/neo4/112_hires.png",
     "set": "Neo Destiny",
     "card_number": 112,
     "quantity": 0,
@@ -1765,7 +1765,7 @@ export const PokemonCards = [
   },
   {
     "name": "Shining Tyranitar",
-    "image": "https://images.pokemontcg.io/neo4/8_hires.png",
+    "image": "https://images.pokemontcg.io/neo4113_hires.png",
     "set": "Neo Destiny",
     "card_number": 113,
     "quantity": 0,
