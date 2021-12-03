@@ -1557,6 +1557,24 @@ export const PokemonCards = [
     "notes": ""
   },
   {
+    "name": "Shining Gyarados",
+    "image": "https://images.pokemontcg.io/neo3/65_hires.png",
+    "set": "Neo Revelations",
+    "card_number": 65,
+    "quantity": 0,
+    "holo": true,
+    "notes": ""
+  },
+  {
+    "name": "Shining Magikarp",
+    "image": "https://images.pokemontcg.io/neo3/66_hires.png",
+    "set": "Neo Revelations",
+    "card_number": 66,
+    "quantity": 0,
+    "holo": true,
+    "notes": ""
+  },
+  {
     "name": "Dark Ampharos",
     "image": "https://images.pokemontcg.io/neo4/1_hires.png",
     "set": "Neo Destiny",
