@@ -32,6 +32,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     getCards()
+    // eslint-disable-next-line
   }, [])
 
   let ownedCards = cards.filter(card => card.quantity > 0)
