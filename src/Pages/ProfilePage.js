@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 import url from '../urlHelper';
@@ -7,6 +7,8 @@ const ProfilePage = () => {
 
   const creds = JSON.parse(localStorage.getItem("trackerCreds"));
   const history = useHistory();
+
+  const [cards, setCards] = useState([])
 
   const deleteAccount = e => {
     e.preventDefault();
@@ -22,7 +24,17 @@ const ProfilePage = () => {
     .then(() => history.push('/'))
   }
 
-  let ownedCards = creds.cards.filter(card => card.quantity > 0)
+  const getCards = () => {
+    fetch(`${url}/collection/${creds.id}`)
+    .then(resp => resp.json())
+    .then(data => setCards(data))
+  }
+
+  useEffect(() => {
+    getCards()
+  }, [])
+
+  let ownedCards = cards.filter(card => card.quantity > 0)
 
   return (
     <div style={{ textAlign: "center", alignContent: "center" }}>
