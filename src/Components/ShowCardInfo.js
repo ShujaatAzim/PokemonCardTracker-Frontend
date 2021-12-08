@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const ShowCardInfo = props => {
 
   const { card } = props
-
-  const [quantity, setQuantity] = useState(card.quantity)
-  const [notes, setNotes] = useState(card.notes)
 
   return (
     <div>
