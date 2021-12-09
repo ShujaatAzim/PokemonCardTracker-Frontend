@@ -11,7 +11,8 @@ const ShowCardInfo = props => {
       <br />
       <h4>Quantity: {" " + quantity }</h4>
       <br />
-      <h4>Notes</h4>
+      <h4>Notes:</h4>
+      <p>{card.notes}</p>
     </div>
   );
 }
