@@ -13,7 +13,8 @@ const RegistrationPage = props => {
 
   const handleRegistration = e => {
 
-    // need to add alerts for user creation failure
+    // need to add alerts for user creation failure.
+    // look up error handling, since rails already sends a failure response. I think.
 
     e.preventDefault();
       let newUser = {
