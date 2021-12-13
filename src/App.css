@@ -10,11 +10,11 @@
 }
 
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
 }
 
 .show-card:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
 }
 
 .header {
