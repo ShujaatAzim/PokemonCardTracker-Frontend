@@ -31,6 +31,9 @@ const CardInfo = props => {
     .then(() => swal(`${card.name} Updated!`, `Your ${card.name} card info has been updated!`, "success"))
   }
 
+  // Maybe submit changes to backend as they're made? will that be too many requests?
+  // Remove button?
+
   return (
     <div>
       <h2>{card.name}</h2>
