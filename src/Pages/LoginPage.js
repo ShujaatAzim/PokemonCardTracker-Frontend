@@ -37,7 +37,6 @@ const LoginPage = props => {
       "username": "Test",
       "password": "test"
     }
-
     fetch(`${url}/login`, {
       method: "POST",
       headers: {
@@ -70,7 +69,7 @@ const LoginPage = props => {
           <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/>
         </Form.Field>
         <br />
-        <Button color="blue" type='submit'>Submit</Button>
+        <Button color="blue" disabled={username === "" || password === ""} type='submit'>Submit</Button>
       </Form>
       <br />
       <h4>-- OR --</h4>
