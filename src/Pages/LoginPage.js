@@ -75,7 +75,7 @@ const LoginPage = props => {
       <h4>-- OR --</h4>
       <br />
       <Button color="blue" onClick={() => history.push('/register')}>Register</Button>
-      <Button color="blue" onClick={e => testLogin(e)}>Try It!</Button>
+      <Button color="blue" onClick={e => testLogin(e)}>Try It Out!</Button>
     </div>
   );
 }
