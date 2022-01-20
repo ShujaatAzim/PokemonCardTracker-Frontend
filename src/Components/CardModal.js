@@ -7,7 +7,6 @@ const CardModal = props => {
 
   const [quantity, setQuantity] = useState(card.quantity)
   const [notes, setNotes] = useState(card.notes)
-  const [updated, setUpdated] = useState(false)
 
   const handleSubmit = () => {
     console.log("submitted")
@@ -22,11 +21,12 @@ const CardModal = props => {
           <Header>{card.name} - {card.set}</Header>
           <p>Notes:</p>
           <Form>
-            <TextArea value={notes} rows={4} onChange={e => {setNotes(e.target.value);setUpdated(true)}}/>
+            <TextArea value={notes} rows={4} onChange={e => setNotes(e.target.value)}/>
           </Form>
+          <br />
           <p>Number owned: {quantity}</p>
-        <Button color="green" onClick={() => {setQuantity(quantity + 1);setUpdated(true)}}>+</Button>
-        <Button color="red" disabled={quantity < 1} onClick={() => {setQuantity(quantity - 1);setUpdated(true)}}>-</Button>
+        <Button color="green" onClick={() => {setQuantity(quantity + 1)}}>+</Button>
+        <Button color="red" disabled={quantity < 1} onClick={() => setQuantity(quantity - 1)}>-</Button>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
@@ -37,7 +37,7 @@ const CardModal = props => {
           icon='checkmark'
           onClick={() => {setOpen(false);handleSubmit()}}
           positive
-          disabled={!updated}
+          disabled={ quantity === card.quantity && notes === card.notes }
         />
       </Modal.Actions>
     </Modal>
