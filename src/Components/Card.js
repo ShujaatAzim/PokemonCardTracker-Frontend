@@ -3,7 +3,7 @@ import CardModal from './CardModal';
 
 const Card = props => {
 
-  const { card } = props
+  const { card, creds, getCards } = props
   const [open, setOpen] = useState(false)
 
   return (
@@ -17,9 +17,9 @@ const Card = props => {
         }} 
         src={card.image} 
         alt="card" 
-        onClick={() => {props.setShowCard(props.card);setOpen(!open)}}
+        onClick={() => setOpen(!open)}
       />
-      {open ? <CardModal card={card} open={open} setOpen={setOpen} /> : null}
+      {open ? <CardModal card={card} creds={creds} open={open} setOpen={setOpen} getCards={getCards} /> : null}
     </React.Fragment>
   );
 }

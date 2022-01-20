@@ -1,15 +1,32 @@
 import React, { useState } from 'react';
 import { Button, Form, Header, Image, Modal, TextArea } from 'semantic-ui-react';
+import swal from 'sweetalert';
+import url from "../urlHelper";
 
 const CardModal = props => {
 
-  const { card, open, setOpen } = props;
+  const { card, open, setOpen, creds, getCards } = props;
 
   const [quantity, setQuantity] = useState(card.quantity)
   const [notes, setNotes] = useState(card.notes)
 
   const handleSubmit = () => {
-    console.log("submitted")
+    let newCardInfo = {
+      quantity: quantity,
+      notes: notes
+    }
+    fetch(`${url}/cards/${card.id}`, {
+      method: "PATCH",
+      headers: {
+        "Authorization": `Bearer ${creds.jwt}`,
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(newCardInfo)
+    })
+    .then(resp => resp.json())
+    .then(() => {getCards();setOpen(false)})
+    .then(() => swal(`${card.name} Updated!`, `Your ${card.name} card info has been updated!`, "success"))
   }
 
   return (
