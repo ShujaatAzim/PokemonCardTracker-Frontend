@@ -5,7 +5,7 @@ import url from "../urlHelper";
 
 const CardModal = props => {
 
-  const { card, open, setOpen, creds, getCards } = props;
+  const { card, open, setOpen, creds, getCards, canEdit } = props;
 
   const [quantity, setQuantity] = useState(card.quantity)
   const [notes, setNotes] = useState(card.notes)
@@ -38,24 +38,26 @@ const CardModal = props => {
           <Header>{card.name} - {card.set}</Header>
           <p>Notes:</p>
           <Form>
-            <TextArea value={notes} rows={4} onChange={e => setNotes(e.target.value)}/>
+            { canEdit ? 
+            <TextArea value={notes} rows={4} onChange={e => setNotes(e.target.value)}/> : 
+            <p>{notes}</p> }
           </Form>
           <br />
           <p>Number owned: {quantity}</p>
-        <Button color="green" onClick={() => {setQuantity(quantity + 1)}}>+</Button>
-        <Button color="red" disabled={quantity < 1} onClick={() => setQuantity(quantity - 1)}>-</Button>
+        { canEdit ? <Button color="green" onClick={() => {setQuantity(quantity + 1)}}>+</Button> : null }
+        { canEdit ? <Button color="red" disabled={quantity < 1} onClick={() => setQuantity(quantity - 1)}>-</Button> : null }
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
         <Button color='red' onClick={() => setOpen(false)}>Cancel</Button>
-        <Button
+        { canEdit ? <Button
           content="Submit Changes"
           labelPosition='right'
           icon='checkmark'
           onClick={() => {setOpen(false);handleSubmit()}}
           positive
           disabled={ quantity === card.quantity && notes === card.notes }
-        />
+        /> : null }
       </Modal.Actions>
     </Modal>
   )

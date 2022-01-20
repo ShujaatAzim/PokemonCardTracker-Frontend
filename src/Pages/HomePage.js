@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { cardsState } from '../Recoil/atoms';
 import Card from '../Components/Card';
-import CardInfo from '../Components/CardInfo';
 import SetButtonsScreen from '../Components/SetButtonsScreen';
 import LoadingScreen from '../Components/LoadingScreen';
 import url from "../urlHelper";
@@ -36,13 +35,9 @@ const HomePage = props => {
     loading ? <LoadingScreen /> : set === "" ? <SetButtonsScreen setSet={setSet} /> :
     <div style={{ display: "flex" }}>
       <div style={{ textAlign: "center" }}>
-        <h2 style={{ marginLeft: "2rem" }}>{set}</h2>
-        {cards.filter(card => card.set === set).map(card => <Card key={card.id} creds={creds} card={card} getCards={getCards} />)}
+        <h2>{set}</h2>
+        {cards.filter(card => card.set === set).map(card => <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />)}
       </div>
-      {/* <div style={{ width: "35%", position: "fixed", marginLeft: "65vw" }}>
-        {showCard ? <CardInfo key={showCard.id} creds={creds} card={showCard} getCards={getCards} setLoading={setLoading} setShowCard={setShowCard} /> : 
-          <h2>Choose a card!</h2> }
-      </div> */}
     </div>
   );
 }
