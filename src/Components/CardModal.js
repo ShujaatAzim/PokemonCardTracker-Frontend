@@ -43,7 +43,7 @@ const CardModal = props => {
             <p>{notes}</p> }
           </Form>
           <br />
-          <p>Number owned: {quantity}</p>
+          <p>Quantity: {quantity}</p>
         { canEdit ? <Button color="green" onClick={() => {setQuantity(quantity + 1)}}>+</Button> : null }
         { canEdit ? <Button color="red" disabled={quantity < 1} onClick={() => setQuantity(quantity - 1)}>-</Button> : null }
         </Modal.Description>
