@@ -31,11 +31,11 @@ const CardModal = props => {
 
   return (
     <Modal onClose={() => setOpen(false)} onOpen={() => setOpen(true)} open={open}>
-      <Modal.Header>{card.name}</Modal.Header>
+      <Modal.Header>{card.name} - {card.set}</Modal.Header>
       <Modal.Content image>
         <Image size='medium' src={card.image} wrapped />
         <Modal.Description>
-          <Header>{card.name} - {card.set}</Header>
+          <Header>{card.name}</Header>
           <p>Notes:</p>
           <Form>
             { canEdit ? 
@@ -49,7 +49,7 @@ const CardModal = props => {
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
-        <Button color='red' onClick={() => setOpen(false)}>Cancel</Button>
+        <Button color='red' onClick={() => setOpen(false)}>{canEdit ? "Cancel" : "Close"}</Button>
         { canEdit ? <Button
           content="Submit Changes"
           labelPosition='right'
