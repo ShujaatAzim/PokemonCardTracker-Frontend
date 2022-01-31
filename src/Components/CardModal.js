@@ -36,14 +36,14 @@ const CardModal = props => {
         <Image size='medium' src={card.image} wrapped />
         <Modal.Description>
           <Header>{card.name}</Header>
-          <p>Notes:</p>
+          <p><b>Notes:</b></p>
           <Form>
             { canEdit ? 
             <TextArea value={notes} rows={4} onChange={e => setNotes(e.target.value)}/> : 
             <p>{notes}</p> }
           </Form>
           <br />
-          <p>Quantity: {quantity}</p>
+          <p><b>Quantity: {quantity}</b></p>
         { canEdit ? <Button color="green" onClick={() => {setQuantity(quantity + 1)}}>+</Button> : null }
         { canEdit ? <Button color="red" disabled={quantity < 1} onClick={() => setQuantity(quantity - 1)}>-</Button> : null }
         </Modal.Description>
