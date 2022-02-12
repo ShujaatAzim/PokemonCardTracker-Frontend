@@ -36,6 +36,7 @@ const HomePage = props => {
     <div style={{ display: "flex" }}>
       <div style={{ textAlign: "center" }}>
         <h2>{set}</h2>
+        <br />
         {cards.filter(card => card.set === set).map(card => <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />)}
       </div>
     </div>

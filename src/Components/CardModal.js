@@ -39,7 +39,7 @@ const CardModal = props => {
           <p><b>Notes:</b></p>
           <Form>
             { canEdit ? 
-            <TextArea value={notes} rows={4} onChange={e => setNotes(e.target.value)}/> : 
+            <TextArea value={notes} rows={4} onChange={e => setNotes(e.target.value)} placeholder="add description here (condition, wants, etc)" /> : 
             <p>{notes}</p> }
           </Form>
           <br />
