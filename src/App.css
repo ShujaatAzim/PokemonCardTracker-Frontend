@@ -40,3 +40,14 @@ body {
   height: 100%;
   overflow: auto;
 }
+
+.login-input {
+  width: 60vw !important;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 100%;
+    height: auto;
+  }
+}
