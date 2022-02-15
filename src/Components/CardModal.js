@@ -30,7 +30,7 @@ const CardModal = props => {
   }
 
   return (
-    <Modal onClose={() => setOpen(false)} onOpen={() => setOpen(true)} open={open}>
+    <Modal onClose={() => setOpen(false)} onOpen={() => setOpen(true)} open={open} size="small">
       <Modal.Header>{card.name} - {card.set}</Modal.Header>
       <Modal.Content image>
         <Image size='medium' src={card.image} wrapped />

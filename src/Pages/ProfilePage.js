@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button } from 'semantic-ui-react';
+import { Button, Label } from 'semantic-ui-react';
 import url from '../urlHelper';
 
 const ProfilePage = () => {
@@ -44,30 +44,42 @@ const ProfilePage = () => {
       <h3>https://pokebook.shujaatazim.com/collection/{creds.id}</h3>
       <br />
       <div>
-        <h5>
-          Base Set: {ownedCards.filter(card => card.set === "Base Set").length} / 16 || 
+        <Label>
+          Base Set: {ownedCards.filter(card => card.set === "Base Set").length} / 16
+        </Label>
+        <Label>
           Jungle Set: {ownedCards.filter(card => card.set === "Jungle").length} / 16
-        </h5>
-        <h5>
-          Fossil Set: {ownedCards.filter(card => card.set === "Fossil").length} / 15 || 
+        </Label>
+        <Label>
+          Fossil Set: {ownedCards.filter(card => card.set === "Fossil").length} / 15
+        </Label>
+        <Label>
           Base Set 2: {ownedCards.filter(card => card.set === "Base Set 2").length} / 20
-        </h5>
-        <h5>
-          Team Rocket Set: {ownedCards.filter(card => card.set === "Team Rocket").length} / 17 || 
+        </Label>
+        <Label>
+          Team Rocket Set: {ownedCards.filter(card => card.set === "Team Rocket").length} / 17
+        </Label>
+        <Label>
           Gym Heroes Set: {ownedCards.filter(card => card.set === "Gym Heroes").length} /19
-        </h5>
-        <h5>
-          Gym Challenge Set: {ownedCards.filter(card => card.set === "Gym Challenge").length} / 20 || 
+        </Label>
+        <Label>
+          Gym Challenge Set: {ownedCards.filter(card => card.set === "Gym Challenge").length} / 20
+        </Label>
+        <Label>
           Neo Genesis Set: {ownedCards.filter(card => card.set === "Neo Genesis").length} / 19
-        </h5>
-        <h5>
-          Neo Discovery Set: {ownedCards.filter(card => card.set === "Neo Discovery").length} / 17 || 
+        </Label>
+        <Label>
+          Neo Discovery Set: {ownedCards.filter(card => card.set === "Neo Discovery").length} / 17
+        </Label>
+        <Label>
           Neo Revelations Set: {ownedCards.filter(card => card.set === "Neo Revelations").length} / 14
-        </h5>
-        <h5>
-          Neo Destiny Set: {ownedCards.filter(card => card.set === "Neo Destiny").length} / 24 || 
+        </Label>
+        <Label>
+          Neo Destiny Set: {ownedCards.filter(card => card.set === "Neo Destiny").length} / 24
+        </Label>
+        <Label>
           Total Cards: {ownedCards.length} / {creds.cards.length}
-        </h5>
+        </Label>
       </div>
       <br />
       <br />
