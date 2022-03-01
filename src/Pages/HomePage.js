@@ -12,7 +12,8 @@ const HomePage = props => {
   const creds = JSON.parse(localStorage.getItem("trackerCreds"))
   const [loading, setLoading] = useState(true)
   const [cards, setCards] = useRecoilState(cardsState)
-  const [filters, setFilters] = useState("none")
+  const [rarity, setRarity] = useState("none")
+  const [cardType, setCardType] = useState("none")
 
   const { set, setSet } = props;
 
@@ -40,19 +41,31 @@ const HomePage = props => {
         <h1>{set}</h1>
         <br />
         <div>
-          <p>Filters:</p>
-          <Button circular color="red" onClick={() => setFilters("none")} disabled={filters === "none"}>None</Button>
-          <Button circular color="purple" onClick={() => setFilters("holo")} disabled={filters === "holo"}>Holos</Button>
-          <Button circular color="blue" onClick={() => setFilters("rare")} disabled={filters === "rare"}>Rares</Button>
-          <Button circular color="green" onClick={() => setFilters("uncommon")} disabled={filters === "uncommon"}>Uncommons</Button>
-          <Button circular color="grey" onClick={() => setFilters("common")} disabled={filters === "common"}>Commons</Button>
+          <div>
+            <Button circular toggle onClick={() => setCardType("none")} active={cardType === "none"}>None</Button>
+            <Button circular toggle onClick={() => setCardType("pokemon")} active={cardType === "pokemon"}>Pokemon</Button>
+            <Button circular toggle onClick={() => setCardType("trainer")} active={cardType === "trainer"}>Trainer</Button>
+            <Button circular toggle onClick={() => setCardType("energy")} active={cardType === "energy"}>Energy</Button>
+          </div>
+          <br />
+          <div>
+            <Button circular toggle onClick={() => setRarity("none")} active={rarity === "none"}>None</Button>
+            <Button circular toggle onClick={() => setRarity("holo")} active={rarity === "holo"}>Holos</Button>
+            <Button circular toggle onClick={() => setRarity("rare")} active={rarity === "rare"}>Rares</Button>
+            <Button circular toggle onClick={() => setRarity("uncommon")} active={rarity === "uncommon"}>Uncommons</Button>
+            <Button circular toggle onClick={() => setRarity("common")} active={rarity === "common"}>Commons</Button>
+          </div>
+          <br />
         </div>
         <br />
         <div>
-          { filters === "none" ? cards.filter(card => card.set === set).map(card => 
+          { rarity === "none" && cardType === "none" ? cards.filter(card => card.set === set).map(card => 
               <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />) 
-            :
-            cards.filter(card => card.set === set && card.rarity === filters).map(card => 
+            : rarity !== "none" && cardType === "none" ? cards.filter(card => card.set === set && card.rarity === rarity).map(card => 
+              <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />)
+            : rarity === "none" && cardType !== "none" ? cards.filter(card => card.set === set && card.card_type === cardType).map(card => 
+              <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />) :
+            cards.filter(card => card.set === set && card.rarity === rarity && card.card_type === cardType).map(card => 
               <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />)
           }
         </div>
