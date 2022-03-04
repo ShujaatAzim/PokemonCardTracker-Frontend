@@ -42,14 +42,14 @@ const HomePage = props => {
         <br />
         <div>
           <div>
-            <Button circular toggle onClick={() => setCardType("none")} active={cardType === "none"}>None</Button>
+            <Button circular toggle onClick={() => setCardType("all")} active={cardType === "all"}>All</Button>
             <Button circular toggle onClick={() => setCardType("pokemon")} active={cardType === "pokemon"}>Pokemon</Button>
             <Button circular toggle onClick={() => setCardType("trainer")} active={cardType === "trainer"}>Trainer</Button>
             <Button circular toggle onClick={() => setCardType("energy")} active={cardType === "energy"}>Energy</Button>
           </div>
           <br />
           <div>
-            <Button circular toggle onClick={() => setRarity("none")} active={rarity === "none"}>None</Button>
+            <Button circular toggle onClick={() => setRarity("all")} active={rarity === "all"}>All</Button>
             <Button circular toggle onClick={() => setRarity("holo")} active={rarity === "holo"}>Holos</Button>
             <Button circular toggle onClick={() => setRarity("rare")} active={rarity === "rare"}>Rares</Button>
             <Button circular toggle onClick={() => setRarity("uncommon")} active={rarity === "uncommon"}>Uncommons</Button>
@@ -59,14 +59,16 @@ const HomePage = props => {
         </div>
         <br />
         <div>
-          { rarity === "none" && cardType === "none" ? cards.filter(card => card.set === set).map(card => 
+          { rarity === "all" && cardType === "all" ? cards.filter(card => card.set === set).map(card => 
               <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />) 
-            : rarity !== "none" && cardType === "none" ? cards.filter(card => card.set === set && card.rarity === rarity).map(card => 
+            : rarity !== "all" && cardType === "all" ? cards.filter(card => card.set === set && card.rarity === rarity).map(card => 
               <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />)
-            : rarity === "none" && cardType !== "none" ? cards.filter(card => card.set === set && card.card_type === cardType).map(card => 
-              <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />) :
-            cards.filter(card => card.set === set && card.rarity === rarity && card.card_type === cardType).map(card => 
-              <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />)
+            : rarity === "all" && cardType !== "all" ? cards.filter(card => card.set === set && card.card_type === cardType).map(card => 
+              <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />) 
+            : cards.filter(card => card.set === set && card.rarity === rarity && card.card_type === cardType).length !== 0 ? 
+              cards.filter(card => card.set === set && card.rarity === rarity && card.card_type === cardType).map(card => 
+              <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />) 
+            : <p>{`NO ${cardType.toUpperCase()} CARDS OF ${rarity.toUpperCase()} RARITY IN THIS SET!`}</p>
           }
         </div>
       </div>
