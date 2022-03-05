@@ -50,6 +50,7 @@ const CollectionSharePage = props => {
       <h2>{set}</h2>
       <br />
         {cards.filter(card => card.set === set).map(card => <Card username={username} key={card.id} card={card} canEdit={false} />)}
+        {/* gotta change these to match home page */}
       </div>
     </div>
   );
