@@ -8,7 +8,7 @@ const ProfilePage = () => {
   const creds = JSON.parse(localStorage.getItem("trackerCreds"));
   const history = useHistory();
 
-  const [cards, setCards] = useState([])
+  const [cards, setCards] = useState([]);
 
   const deleteAccount = e => {
     e.preventDefault();

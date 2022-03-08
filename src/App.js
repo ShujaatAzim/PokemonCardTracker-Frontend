@@ -11,8 +11,8 @@ import NavBarShare from './Components/NavBarShare';
 
 const App = () => {
 
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("trackerCreds")))
-  const [set, setSet] = useState("")
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("trackerCreds")));
+  const [set, setSet] = useState("");
 
   const location = useLocation();
 

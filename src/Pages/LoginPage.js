@@ -5,8 +5,8 @@ import url from "../urlHelper";
 
 const LoginPage = props => {
 
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   let history = useHistory();
 

@@ -6,8 +6,8 @@ import url from "../urlHelper";
 
 const RegistrationPage = props => {
 
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   let history = useHistory();
 

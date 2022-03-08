@@ -3,8 +3,8 @@ import CardModal from './CardModal';
 
 const Card = props => {
 
-  const { card, creds, getCards, canEdit } = props
-  const [open, setOpen] = useState(false)
+  const { card, creds, getCards, canEdit } = props;
+  const [open, setOpen] = useState(false);
 
   return (
     <React.Fragment>

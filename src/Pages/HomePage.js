@@ -9,11 +9,12 @@ import { Button } from 'semantic-ui-react';
 
 const HomePage = props => {
 
-  const creds = JSON.parse(localStorage.getItem("trackerCreds"))
-  const [loading, setLoading] = useState(true)
-  const [cards, setCards] = useRecoilState(cardsState)
-  const [rarity, setRarity] = useState("all")
-  const [cardType, setCardType] = useState("all")
+  const creds = JSON.parse(localStorage.getItem("trackerCreds"));
+  
+  const [loading, setLoading] = useState(true);
+  const [cards, setCards] = useRecoilState(cardsState);
+  const [rarity, setRarity] = useState("all");
+  const [cardType, setCardType] = useState("all");
 
   const { set, setSet } = props;
 

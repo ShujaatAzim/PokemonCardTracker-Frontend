@@ -7,8 +7,8 @@ const CardModal = props => {
 
   const { card, open, setOpen, creds, getCards, canEdit } = props;
 
-  const [quantity, setQuantity] = useState(card.quantity)
-  const [notes, setNotes] = useState(card.notes)
+  const [quantity, setQuantity] = useState(card.quantity);
+  const [notes, setNotes] = useState(card.notes);
 
   const handleSubmit = () => {
     let newCardInfo = {
