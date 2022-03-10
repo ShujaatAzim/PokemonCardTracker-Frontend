@@ -46,28 +46,28 @@ const ProfilePage = () => {
       <div>
         <List verticalAlign="middle">
           <List.Item>
-            <Label>Base Set: {ownedCards.filter(card => card.set === "Base Set").length} / 16</Label>
-            <Label>Jungle Set: {ownedCards.filter(card => card.set === "Jungle").length} / 16</Label>
+            <Label>Base Set: {ownedCards.filter(card => card.set === "Base Set").length} / 102</Label>
+            <Label>Jungle Set: {ownedCards.filter(card => card.set === "Jungle").length} / 64</Label>
           </List.Item>
           <List.Item>
-            <Label>Fossil Set: {ownedCards.filter(card => card.set === "Fossil").length} / 15</Label>
-            <Label>Base Set 2: {ownedCards.filter(card => card.set === "Base Set 2").length} / 20</Label>
+            <Label>Fossil Set: {ownedCards.filter(card => card.set === "Fossil").length} / 62 </Label>
+            <Label>Base Set 2: {ownedCards.filter(card => card.set === "Base Set 2").length} / 130</Label>
           </List.Item>
           <List.Item>
-            <Label>Team Rocket Set: {ownedCards.filter(card => card.set === "Team Rocket").length} / 17</Label>
-            <Label>Gym Heroes Set: {ownedCards.filter(card => card.set === "Gym Heroes").length} /19</Label>
+            <Label>Team Rocket Set: {ownedCards.filter(card => card.set === "Team Rocket").length} / 82</Label>
+            <Label>Gym Heroes Set: {ownedCards.filter(card => card.set === "Gym Heroes").length} / 132</Label>
           </List.Item>
           <List.Item>
-            <Label>Gym Challenge Set: {ownedCards.filter(card => card.set === "Gym Challenge").length} / 20</Label>
-            <Label>Neo Genesis Set: {ownedCards.filter(card => card.set === "Neo Genesis").length} / 19</Label>
+            <Label>Gym Challenge Set: {ownedCards.filter(card => card.set === "Gym Challenge").length} / 132</Label>
+            <Label>Neo Genesis Set: {ownedCards.filter(card => card.set === "Neo Genesis").length} / 111</Label>
           </List.Item>
           <List.Item>
-            <Label>Neo Discovery Set: {ownedCards.filter(card => card.set === "Neo Discovery").length} / 17</Label>
-            <Label>Neo Revelations Set: {ownedCards.filter(card => card.set === "Neo Revelations").length} / 14</Label>
+            <Label>Neo Discovery Set: {ownedCards.filter(card => card.set === "Neo Discovery").length} / 75</Label>
+            <Label>Neo Revelations Set: {ownedCards.filter(card => card.set === "Neo Revelations").length} / 64</Label>
           </List.Item>
           <List.Item>
-            <Label>Neo Destiny Set: {ownedCards.filter(card => card.set === "Neo Destiny").length} / 24</Label>
-            <Label>Total Cards: {ownedCards.length} / {creds.cards.length}</Label>
+            <Label>Neo Destiny Set: {ownedCards.filter(card => card.set === "Neo Destiny").length} / 105</Label>
+            <Label>Total Cards: {ownedCards.length} / 1059</Label>
           </List.Item>
         </List>
       </div>

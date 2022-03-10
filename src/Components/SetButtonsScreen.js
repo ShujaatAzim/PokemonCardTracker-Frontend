@@ -3,7 +3,7 @@ import { Button } from 'semantic-ui-react';
 
 const SetButtonsScreen = props => {
 
-  const creds = JSON.parse(localStorage.getItem("trackerCreds"))
+  const creds = JSON.parse(localStorage.getItem("trackerCreds"));
   
   const { setSet } = props;
 
