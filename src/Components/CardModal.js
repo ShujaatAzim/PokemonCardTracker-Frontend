@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Form, Header, Image, Modal, TextArea } from 'semantic-ui-react';
+import { Button, Form, Image, Modal, TextArea } from 'semantic-ui-react';
+import { setSymbols } from '../Data/SetSymbols';
 import swal from 'sweetalert';
 import url from "../urlHelper";
 
@@ -31,21 +32,23 @@ const CardModal = props => {
 
   return (
     <Modal onClose={() => setOpen(false)} onOpen={() => setOpen(true)} open={open} size="small">
-      <Modal.Header>{card.name} - {card.set}</Modal.Header>
+      <Modal.Header style={{ textAlign: "center" }}>{card.name} <img src={`${setSymbols[card.set]}`} alt='set symbol' style={{ height: "15px" }} /></Modal.Header>
       <Modal.Content image>
         <Image size='medium' src={card.image} wrapped />
         <Modal.Description>
-          <Header>{card.name}</Header>
+          <p><b>Set:</b> {card.set}</p>
+          <p><b>Rarity:</b> {card.rarity.charAt(0).toUpperCase() + card.rarity.slice(1)}</p>
+          <p><b>Quantity:</b> {quantity}</p>
+        { canEdit ? <Button color="green" onClick={() => {setQuantity(quantity + 1)}}>+</Button> : null }
+        { canEdit ? <Button color="red" disabled={quantity < 1} onClick={() => setQuantity(quantity - 1)}>-</Button> : null }
+          <br />
+          <br />
           <p><b>Notes:</b></p>
           <Form>
             { canEdit ? 
             <TextArea value={notes} rows={4} onChange={e => setNotes(e.target.value)} placeholder="add description here (condition, wants, etc)" /> : 
             <p>{notes}</p> }
           </Form>
-          <br />
-          <p><b>Quantity: {quantity}</b></p>
-        { canEdit ? <Button color="green" onClick={() => {setQuantity(quantity + 1)}}>+</Button> : null }
-        { canEdit ? <Button color="red" disabled={quantity < 1} onClick={() => setQuantity(quantity - 1)}>-</Button> : null }
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>

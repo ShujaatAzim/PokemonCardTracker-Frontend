@@ -6,6 +6,7 @@ import SetButtonsScreen from '../Components/SetButtonsScreen';
 import LoadingScreen from '../Components/LoadingScreen';
 import url from "../urlHelper";
 import { Button } from 'semantic-ui-react';
+import { setSymbols } from '../Data/SetSymbols';
 
 const HomePage = props => {
 
@@ -39,7 +40,7 @@ const HomePage = props => {
     loading ? <LoadingScreen /> : set === "" ? <SetButtonsScreen setSet={setSet} /> :
     <div style={{ textAlign: "center" }}>
       <div>
-        <h1>{set}</h1>
+        <h1>{set} <img src={`${setSymbols[set]}`} alt='set symbol' style={{ height: "20px" }} /></h1>
         <br />
         <div>
           <div>
