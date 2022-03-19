@@ -33,17 +33,17 @@ const CardModal = props => {
 
   return (
     <Modal onClose={() => setOpen(false)} onOpen={() => setOpen(true)} open={open} size="small">
-      <Modal.Header style={{ textAlign: "center" }}>{card.name} <img src={`${setSymbols[card.set]}`} alt='set symbol' style={{ height: "15px" }} /></Modal.Header>
+      <Modal.Header style={{ textAlign: "center" }}>{card.name} {setSymbols[card.set]}</Modal.Header>
       <Modal.Content image>
         <Image size='medium' src={card.image} wrapped />
         <Modal.Description>
-          <p><b>Set:</b> {card.set}</p>
-          <p><b>Rarity:</b> 
-            {" "} <img src={raritySymbols[card.rarity]} alt={card.rarity} /> ({card.rarity.charAt(0).toUpperCase() + card.rarity.slice(1)}) 
-          </p>
+          <p>{" "}{raritySymbols[card.rarity]} ({card.rarity.charAt(0).toUpperCase() + card.rarity.slice(1)})</p>
+          <p><b>Set: </b>{card.set}</p>
+          <br />
           <p><b>Quantity:</b> {quantity}</p>
         { canEdit ? <Button color="green" onClick={() => {setQuantity(quantity + 1)}}>+</Button> : null }
         { canEdit ? <Button color="red" disabled={quantity < 1} onClick={() => setQuantity(quantity - 1)}>-</Button> : null }
+          <br />
           <br />
           <br />
           <p><b>Notes:</b></p>

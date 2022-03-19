@@ -41,7 +41,7 @@ const HomePage = props => {
     loading ? <LoadingScreen /> : set === "" ? <SetButtonsScreen setSet={setSet} /> :
     <div style={{ textAlign: "center" }}>
       <div>
-        <h1>{set} <img src={`${setSymbols[set]}`} alt='set symbol' style={{ height: "20px" }} /></h1>
+        <h1>{set} {setSymbols[set]}</h1>
         <br />
         <div>
           <div>

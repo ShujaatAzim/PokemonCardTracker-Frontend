@@ -28,37 +28,37 @@ const NavBar = props => {
       <Dropdown item text="Sets" disabled={location.pathname === "/profile"}>
         <Dropdown.Menu>
           <Dropdown.Item onClick={() => setSet("Base Set")} disabled={set === "Base Set"}>
-            Base Set <img src={`${setSymbols["Base Set"]}`} alt='set' style={{ height: "10px" }} />
+            Base Set {setSymbols["Base Set"]}
           </Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("Jungle")} disabled={set === "Jungle"}>
-            Jungle <img src={`${setSymbols["Jungle"]}`} alt='set' style={{ height: "10px" }} />
+            Jungle {setSymbols["Jungle"]}
           </Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("Fossil")} disabled={set === "Fossil"}>
-            Fossil <img src={`${setSymbols["Fossil"]}`} alt='set' style={{ height: "10px" }} />
+            Fossil {setSymbols["Fossil"]}
           </Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("Base Set 2")} disabled={set === "Base Set 2"}>
-            Base Set 2 <img src={`${setSymbols["Base Set 2"]}`} alt='set' style={{ height: "10px" }} />
+            Base Set 2 {setSymbols["Base Set 2"]}
           </Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("Team Rocket")} disabled={set === "Team Rocket"}>
-            Team Rocket <img src={`${setSymbols["Team Rocket"]}`} alt='set' style={{ height: "10px" }} />
+            Team Rocket {setSymbols["Team Rocket"]}
           </Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("Gym Heroes")} disabled={set === "Gym Heroes"}>
-            Gym Heroes <img src={`${setSymbols["Gym Heroes"]}`} alt='set' style={{ height: "10px" }} />
+            Gym Heroes {setSymbols["Gym Heroes"]}
           </Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("Gym Challenge")} disabled={set === "Gym Challenge"}>
-            Gym Challenge <img src={`${setSymbols["Gym Challenge"]}`} alt='set' style={{ height: "10px" }} />
+            Gym Challenge {setSymbols["Gym Challenge"]}
           </Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("Neo Genesis")} disabled={set === "Neo Genesis"}>
-            Neo Genesis <img src={`${setSymbols["Neo Genesis"]}`} alt='set' style={{ height: "10px" }} />
+            Neo Genesis {setSymbols["Neo Genesis"]}
           </Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("Neo Discovery")} disabled={set === "Neo Discovery"}>
-            Neo Discovery <img src={`${setSymbols["Neo Discovery"]}`} alt='set' style={{ height: "10px" }} />
+            Neo Discovery {setSymbols["Neo Discovery"]}
           </Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("Neo Revelations")} disabled={set === "Neo Revelations"}>
-            Neo Revelations <img src={`${setSymbols["Neo Revelations"]}`} alt='set' style={{ height: "10px" }} />
+            Neo Revelations {setSymbols["Neo Revelations"]}
           </Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("Neo Destiny")} disabled={set === "Neo Destiny"}>
-            Neo Destiny <img src={`${setSymbols["Neo Destiny"]}`} alt='set' style={{ height: "10px" }} />
+            Neo Destiny {setSymbols["Neo Destiny"]}
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
