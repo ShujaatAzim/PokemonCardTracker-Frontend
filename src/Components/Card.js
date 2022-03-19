@@ -19,7 +19,15 @@ const Card = props => {
         alt="card" 
         onClick={() => setOpen(!open)}
       />
-      {open ? <CardModal card={card} creds={creds} open={open} setOpen={setOpen} getCards={getCards} canEdit={canEdit} /> : null}
+      {open ? 
+        <CardModal 
+          card={card} 
+          creds={creds} 
+          open={open} 
+          setOpen={setOpen} 
+          getCards={getCards} 
+          canEdit={canEdit} 
+        /> : null}
     </React.Fragment>
   );
 }

@@ -11,3 +11,11 @@ export const setSymbols = {
   "Neo Revelations": "https://images.pokemontcg.io/neo3/symbol.png",
   "Neo Destiny": "https://images.pokemontcg.io/neo4/symbol.png"
 };
+
+export const raritySymbols = {
+  "secret": <img src="https://archives.bulbagarden.net/media/upload/9/95/Rarity_Shining_Holo.png" alt="secret" />,
+  "holo": <img src="https://archives.bulbagarden.net/media/upload/6/65/Rarity_Rare_Holo.png" alt="holo" />,
+  "rare": <img src="https://archives.bulbagarden.net/media/upload/b/b9/Rarity_Rare.png" alt="rare" />,
+  "uncommon": <img src="https://archives.bulbagarden.net/media/upload/0/0f/Rarity_Uncommon.png" alt="uncommon" />,
+  "common": <img src="https://archives.bulbagarden.net/media/upload/8/8c/Rarity_Common.png" alt="common" />
+};

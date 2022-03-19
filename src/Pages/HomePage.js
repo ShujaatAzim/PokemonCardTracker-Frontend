@@ -6,7 +6,8 @@ import SetButtonsScreen from '../Components/SetButtonsScreen';
 import LoadingScreen from '../Components/LoadingScreen';
 import url from "../urlHelper";
 import { Button } from 'semantic-ui-react';
-import { setSymbols } from '../Data/SetSymbols';
+import { setSymbols } from '../Data/Symbols';
+import { raritySymbols } from '../Data/Symbols';
 
 const HomePage = props => {
 
@@ -52,10 +53,10 @@ const HomePage = props => {
           <br />
           <div>
             <Button circular toggle onClick={() => setRarity("all")} active={rarity === "all"}>All</Button>
-            <Button circular toggle onClick={() => setRarity("holo")} active={rarity === "holo"}>Holos</Button>
-            <Button circular toggle onClick={() => setRarity("rare")} active={rarity === "rare"}>Rares</Button>
-            <Button circular toggle onClick={() => setRarity("uncommon")} active={rarity === "uncommon"}>Uncommons</Button>
-            <Button circular toggle onClick={() => setRarity("common")} active={rarity === "common"}>Commons</Button>
+            <Button circular toggle onClick={() => setRarity("holo")} active={rarity === "holo"}>{raritySymbols.holo}</Button>
+            <Button circular toggle onClick={() => setRarity("rare")} active={rarity === "rare"}>{raritySymbols.rare}</Button>
+            <Button circular toggle onClick={() => setRarity("uncommon")} active={rarity === "uncommon"}>{raritySymbols.uncommon}</Button>
+            <Button circular toggle onClick={() => setRarity("common")} active={rarity === "common"}>{raritySymbols.common}</Button>
           </div>
           <br />
         </div>

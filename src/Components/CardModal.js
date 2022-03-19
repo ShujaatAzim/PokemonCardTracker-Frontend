@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Image, Modal, TextArea } from 'semantic-ui-react';
-import { setSymbols } from '../Data/SetSymbols';
+import { setSymbols } from '../Data/Symbols';
+import { raritySymbols } from '../Data/Symbols'
 import swal from 'sweetalert';
 import url from "../urlHelper";
 
@@ -37,7 +38,9 @@ const CardModal = props => {
         <Image size='medium' src={card.image} wrapped />
         <Modal.Description>
           <p><b>Set:</b> {card.set}</p>
-          <p><b>Rarity:</b> {card.rarity.charAt(0).toUpperCase() + card.rarity.slice(1)}</p>
+          <p><b>Rarity:</b> 
+            {" "} <img src={raritySymbols[card.rarity]} alt={card.rarity} /> ({card.rarity.charAt(0).toUpperCase() + card.rarity.slice(1)}) 
+          </p>
           <p><b>Quantity:</b> {quantity}</p>
         { canEdit ? <Button color="green" onClick={() => {setQuantity(quantity + 1)}}>+</Button> : null }
         { canEdit ? <Button color="red" disabled={quantity < 1} onClick={() => setQuantity(quantity - 1)}>-</Button> : null }

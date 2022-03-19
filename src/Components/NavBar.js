@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Menu, Dropdown } from 'semantic-ui-react';
-import { setSymbols } from '../Data/SetSymbols';
+import { setSymbols } from '../Data/Symbols';
 
 const NavBar = props => {
 
