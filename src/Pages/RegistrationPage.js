@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Form, Button } from 'semantic-ui-react';
-import { PokemonCards } from '../Data/PokemonCards';
 import url from "../urlHelper";
 
 const RegistrationPage = props => {
@@ -19,8 +18,7 @@ const RegistrationPage = props => {
     e.preventDefault();
       let newUser = {
         "username": username,
-        "password": password,
-        "cards_attributes": PokemonCards
+        "password": password
       }
 
       fetch(`${url}/users`, {
