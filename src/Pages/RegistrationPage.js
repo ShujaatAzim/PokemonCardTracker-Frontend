@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LoadingScreen from '../Components/LoadingScreen';
 import { useHistory } from 'react-router-dom';
 import { Form, Button } from 'semantic-ui-react';
 import url from "../urlHelper";
@@ -7,6 +8,7 @@ const RegistrationPage = props => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   let history = useHistory();
 
@@ -32,16 +34,18 @@ const RegistrationPage = props => {
       .then(resp => resp.json())
       .then(data => localStorage.setItem("trackerCreds", JSON.stringify(data)))
       .then(() => props.setUser(JSON.parse(localStorage.getItem("trackerCreds"))))
+      .then(() => setLoading(false))
       .then(() => history.push('/profile'))
   }
 
   return (
+    loading ? <LoadingScreen code={"new user"} /> : 
     <div style={{ textAlign: "center", marginLeft: "30rem", marginRight: "30rem" }}>
       <img src="https://fontmeme.com/permalink/210612/680c3a9e420df05eff3e08d6937137d0.png" alt="pokebook" border="0" />
       <h4>Please register:</h4>
       <br />
       <br />
-      <Form onSubmit={e => handleRegistration(e)}>
+      <Form onSubmit={e => {handleRegistration(e);setLoading(true)}}>
         <Form.Field>
           <label>Username</label>
           <input type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
