@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form, Image, Modal, TextArea } from 'semantic-ui-react';
+import { Button, Form, Image, Modal, TextArea, Label } from 'semantic-ui-react';
 import { setSymbols } from '../Data/Symbols';
 import { raritySymbols } from '../Data/Symbols'
 import swal from 'sweetalert';
@@ -38,12 +38,16 @@ const CardModal = props => {
         <Image size='medium' src={card.image} wrapped />
         <Modal.Description>
           <p>{" "}{raritySymbols[card.rarity]} ({card.rarity.charAt(0).toUpperCase() + card.rarity.slice(1)})</p>
-          <p><b>Set: </b>{card.set}</p>
+          <Label>{card.set}</Label>
           <br />
-          <p><b>Quantity:</b> {quantity}</p>
-        { canEdit ? <Button color="green" onClick={() => {setQuantity(quantity + 1)}}>+</Button> : null }
-        { canEdit ? <Button color="red" disabled={quantity < 1} onClick={() => setQuantity(quantity - 1)}>-</Button> : null }
           <br />
+          <Label>Quantity : <Label.Detail>{quantity}</Label.Detail></Label>
+          <br />
+          <br />
+          <div>
+            { canEdit ? <Button circular color="green" size="mini" onClick={() => {setQuantity(quantity + 1)}}>+</Button> : null }
+            { canEdit ? <Button circular color="red" size="mini" disabled={quantity < 1} onClick={() => setQuantity(quantity - 1)}>-</Button> : null }
+          </div>
           <br />
           <br />
           <p><b>Notes:</b></p>
