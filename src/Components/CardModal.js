@@ -3,7 +3,7 @@ import { Button, Form, Image, Modal, TextArea, Label } from 'semantic-ui-react';
 import { setSymbols } from '../Data/Symbols';
 import { raritySymbols } from '../Data/Symbols'
 import swal from 'sweetalert';
-import url from "../urlHelper";
+import url from '../urlHelper';
 
 const CardModal = props => {
 

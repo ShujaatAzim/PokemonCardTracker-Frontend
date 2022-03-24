@@ -18,7 +18,7 @@ const Card = props => {
         src={card.image} 
         alt="card" 
         onClick={() => setOpen(!open)}
-      />
+        />
       {open ? 
         <CardModal 
           card={card} 

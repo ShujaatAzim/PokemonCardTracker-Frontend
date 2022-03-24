@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import LoadingScreen from '../Components/LoadingScreen';
 import { useHistory } from 'react-router-dom';
 import { Form, Button } from 'semantic-ui-react';
-import url from "../urlHelper";
+import url from '../urlHelper';
 
 const RegistrationPage = props => {
 

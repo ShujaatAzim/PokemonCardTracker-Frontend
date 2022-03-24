@@ -4,7 +4,7 @@ import { cardsState } from '../Recoil/atoms';
 import Card from '../Components/Card';
 import SetButtonsScreen from '../Components/SetButtonsScreen';
 import LoadingScreen from '../Components/LoadingScreen';
-import url from "../urlHelper";
+import url from '../urlHelper';
 import { Button } from 'semantic-ui-react';
 import { setSymbols } from '../Data/Symbols';
 import { raritySymbols } from '../Data/Symbols';
