@@ -17,6 +17,7 @@ const HomePage = props => {
   const [cards, setCards] = useRecoilState(cardsState);
   const [rarity, setRarity] = useState("all");
   const [cardType, setCardType] = useState("all");
+  const [count, setCount] = useState(0);
 
   const { set, setSet } = props;
 
@@ -62,15 +63,17 @@ const HomePage = props => {
         </div>
         <br />
         <div>
-          { rarity === "all" && cardType === "all" ? cards.filter(card => card.set === set).map(card => 
-              <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />) 
-            : rarity !== "all" && cardType === "all" ? cards.filter(card => card.set === set && card.rarity === rarity).map(card => 
-              <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />)
-            : rarity === "all" && cardType !== "all" ? cards.filter(card => card.set === set && card.card_type === cardType).map(card => 
-              <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />) 
+          { rarity === "all" && cardType === "all" ? cards.filter(card => card.set === set).map((card, i, a) => 
+
+              <Card key={a[i].id} creds={creds} card={a[i + count]} getCards={getCards} canEdit={true} i={i} a={a} count={count} setCount={setCount} />) 
+
+            : rarity !== "all" && cardType === "all" ? cards.filter(card => card.set === set && card.rarity === rarity).map((card, i, a) => 
+              <Card key={a[i].id} creds={creds} card={a[i + count]} getCards={getCards} canEdit={true} i={i} a={a} count={count} setCount={setCount} />)
+            : rarity === "all" && cardType !== "all" ? cards.filter(card => card.set === set && card.card_type === cardType).map((card, i, a) => 
+              <Card key={a[i].id} creds={creds} card={a[i + count]} getCards={getCards} canEdit={true} i={i} a={a} count={count} setCount={setCount} />) 
             : cards.filter(card => card.set === set && card.rarity === rarity && card.card_type === cardType).length !== 0 ? 
-              cards.filter(card => card.set === set && card.rarity === rarity && card.card_type === cardType).map(card => 
-              <Card key={card.id} creds={creds} card={card} getCards={getCards} canEdit={true} />) 
+              cards.filter(card => card.set === set && card.rarity === rarity && card.card_type === cardType).map((card, i, a) => 
+              <Card key={a[i].id} creds={creds} card={a[i + count]} getCards={getCards} canEdit={true} i={i} a={a} count={count} setCount={setCount} />) 
             : <p>{`NO ${cardType.toUpperCase()} CARDS OF ${rarity.toUpperCase()} RARITY IN THIS SET!`}</p>
           }
         </div>

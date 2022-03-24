@@ -3,7 +3,7 @@ import CardModal from './CardModal';
 
 const Card = props => {
 
-  const { card, creds, getCards, canEdit } = props;
+  const { card, creds, getCards, canEdit, a, i } = props;
   const [open, setOpen] = useState(false);
 
   return (
@@ -13,9 +13,9 @@ const Card = props => {
         style={{ 
           height: "15rem", 
           margin: "0rem 0.5rem 0.5rem 0.5rem", 
-          opacity: card.quantity === 0 ? "35%" : "100%" 
+          opacity: a[i].quantity === 0 ? "35%" : "100%" 
         }} 
-        src={card.image} 
+        src={a[i].image} 
         alt="card" 
         onClick={() => setOpen(!open)}
         />
@@ -27,6 +27,10 @@ const Card = props => {
           setOpen={setOpen} 
           getCards={getCards} 
           canEdit={canEdit} 
+          count={props.count}
+          setCount={props.setCount}
+          i={props.i}
+          a={props.a}
         /> : null}
     </React.Fragment>
   );

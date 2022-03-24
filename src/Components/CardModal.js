@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Form, Image, Modal, TextArea, Label } from 'semantic-ui-react';
 import { setSymbols } from '../Data/Symbols';
 import { raritySymbols } from '../Data/Symbols'
@@ -7,10 +7,18 @@ import url from '../urlHelper';
 
 const CardModal = props => {
 
-  const { card, open, setOpen, creds, getCards, canEdit } = props;
+  const { card, open, setOpen, creds, getCards, canEdit, count, setCount, i, a } = props;
 
   const [quantity, setQuantity] = useState(card.quantity);
   const [notes, setNotes] = useState(card.notes);
+
+  useEffect(() => {
+    setQuantity(card.quantity);
+  }, [card]);
+
+  useEffect(() => {
+    setNotes(card.notes)
+  },[card]);
 
   const handleSubmit = () => {
     let newCardInfo = {
@@ -32,7 +40,7 @@ const CardModal = props => {
   }
 
   return (
-    <Modal onClose={() => setOpen(false)} onOpen={() => setOpen(true)} open={open} size="small">
+    <Modal onClose={() => {setOpen(false); setCount(0)}} onOpen={() => setOpen(true)} open={open} size="small">
       <Modal.Header style={{ textAlign: "center" }}>{card.name} {setSymbols[card.set]}</Modal.Header>
       <Modal.Content image>
         <Image size='medium' src={card.image} wrapped />
@@ -59,7 +67,7 @@ const CardModal = props => {
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
-        <Button color='red' onClick={() => setOpen(false)}>{canEdit ? "Cancel" : "Close"}</Button>
+        <Button color='red' onClick={() => {setOpen(false); setCount(0)}}>{canEdit ? "Cancel" : "Close"}</Button>
         { canEdit ? <Button
           content="Submit Changes"
           labelPosition='right'
@@ -68,6 +76,8 @@ const CardModal = props => {
           positive
           disabled={ quantity === card.quantity && notes === card.notes }
         /> : null }
+        <Button disabled={i + count === 0} onClick={() => setCount(count - 1)}>Prev</Button>
+        <Button disabled={i + count === a.length -1 } onClick={() => setCount(count + 1)}>Next</Button>
       </Modal.Actions>
     </Modal>
   )
