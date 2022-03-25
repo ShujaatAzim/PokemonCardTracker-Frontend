@@ -62,7 +62,7 @@ const CardModal = props => {
           <Form>
             { canEdit ? 
             <TextArea value={notes} rows={4} onChange={e => setNotes(e.target.value)} placeholder="add description here (condition, wants, etc)" /> : 
-            <p>{notes}</p> }
+            <p style={{ width: "300px", rows: "4"}}>{notes}</p> }
           </Form>
         </Modal.Description>
       </Modal.Content>

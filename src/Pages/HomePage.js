@@ -64,9 +64,7 @@ const HomePage = props => {
         <br />
         <div>
           { rarity === "all" && cardType === "all" ? cards.filter(card => card.set === set).map((card, i, a) => 
-
               <Card key={a[i].id} creds={creds} card={a[i + count]} getCards={getCards} canEdit={true} i={i} a={a} count={count} setCount={setCount} />) 
-
             : rarity !== "all" && cardType === "all" ? cards.filter(card => card.set === set && card.rarity === rarity).map((card, i, a) => 
               <Card key={a[i].id} creds={creds} card={a[i + count]} getCards={getCards} canEdit={true} i={i} a={a} count={count} setCount={setCount} />)
             : rarity === "all" && cardType !== "all" ? cards.filter(card => card.set === set && card.card_type === cardType).map((card, i, a) => 

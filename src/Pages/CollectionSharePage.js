@@ -12,9 +12,10 @@ const CollectionSharePage = props => {
   const location = useLocation()
   const userID = (location.pathname.split("/")[2])
 
-  const [loading, setLoading] = useState(true)
-  const [cards, setCards] = useState([])
-  const [username, setUsername] = useState("")
+  const [loading, setLoading] = useState(true);
+  const [cards, setCards] = useState([]);
+  const [username, setUsername] = useState("");
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     getCollection()
@@ -49,8 +50,8 @@ const CollectionSharePage = props => {
       <div style={{ textAlign: "center" }}>
       <h2>{set}</h2>
       <br />
-        {cards.filter(card => card.set === set).map(card => <Card username={username} key={card.id} card={card} canEdit={false} />)}
-        {/* gotta change these to match home page */}
+        {cards.filter(card => card.set === set).map((card, i, a) => {
+          return <Card key={a[i].id} card={a[i + count]} canEdit={false} i={i} a={a} count={count} setCount={setCount} />})}
       </div>
     </div>
   );
