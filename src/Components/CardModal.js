@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, Image, Modal, TextArea, Label } from 'semantic-ui-react';
+import { Button, Form, Image, Modal, TextArea, Label, Icon } from 'semantic-ui-react';
 import { setSymbols } from '../Data/Symbols';
 import { raritySymbols } from '../Data/Symbols'
 import swal from 'sweetalert';
@@ -64,6 +64,15 @@ const CardModal = props => {
             <TextArea value={notes} rows={4} onChange={e => setNotes(e.target.value)} placeholder="add description here (condition, wants, etc)" /> : 
             <p style={{ width: "300px", rows: "4"}}>{notes}</p> }
           </Form>
+          <br />
+          <Button color='blue' circular icon labelPosition='left' disabled={i + count === 0 } onClick={() => setCount(count - 1)}>
+            Prev
+            <Icon name='left arrow' />
+          </Button>
+          <Button color='blue' circular icon labelPosition='right' disabled={i + count === a.length -1 } onClick={() => setCount(count + 1)}>
+            Next
+            <Icon name='right arrow' />
+          </Button>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
@@ -76,8 +85,6 @@ const CardModal = props => {
           positive
           disabled={ quantity === card.quantity && notes === card.notes }
         /> : null }
-        <Button disabled={i + count === 0} onClick={() => setCount(count - 1)}>Prev</Button>
-        <Button disabled={i + count === a.length -1 } onClick={() => setCount(count + 1)}>Next</Button>
       </Modal.Actions>
     </Modal>
   )
