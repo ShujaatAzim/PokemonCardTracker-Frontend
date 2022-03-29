@@ -35,7 +35,7 @@ const CardModal = props => {
       body: JSON.stringify(newCardInfo)
     })
     .then(resp => resp.json())
-    .then(() => {getCards();setOpen(false)})
+    .then(() => {getCards();setOpen(false);setCount(0)})
     .then(() => swal(`${card.name} Updated!`, `Your ${card.name} card info has been updated!`, "success"))
   }
 
@@ -65,11 +65,13 @@ const CardModal = props => {
             <p style={{ width: "300px", rows: "4"}}>{notes}</p> }
           </Form>
           <br />
-          <Button color='blue' circular icon labelPosition='left' disabled={i + count === 0 } onClick={() => setCount(count - 1)}>
+          <Button color='blue' circular icon labelPosition='left' disabled={i + count === 0 } 
+            onClick={() => {setCount(count - 1);setNotes(card.notes);setQuantity(card.quantity)}}>
             Prev
             <Icon name='left arrow' />
           </Button>
-          <Button color='blue' circular icon labelPosition='right' disabled={i + count === a.length -1 } onClick={() => setCount(count + 1)}>
+          <Button color='blue' circular icon labelPosition='right' disabled={i + count === a.length -1 } 
+            onClick={() => {setCount(count + 1);setNotes(card.notes);setQuantity(card.quantity)}}>
             Next
             <Icon name='right arrow' />
           </Button>
@@ -78,7 +80,7 @@ const CardModal = props => {
       <Modal.Actions>
         <Button color='red' onClick={() => {setOpen(false); setCount(0)}}>{canEdit ? "Cancel" : "Close"}</Button>
         { canEdit ? <Button
-          content="Submit Changes"
+          content='Submit Changes'
           labelPosition='right'
           icon='checkmark'
           onClick={() => {setOpen(false);handleSubmit()}}
