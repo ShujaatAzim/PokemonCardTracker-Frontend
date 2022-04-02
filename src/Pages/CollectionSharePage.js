@@ -48,7 +48,7 @@ const CollectionSharePage = props => {
     loading || cards === [] ? <LoadingScreen /> : username !== "" && !set ? <SetButtonsShare username={username} setSet={setSet} /> :
     <div style={{ display: "flex" }}>
       <div style={{ textAlign: "center" }}>
-      <h2>{set}</h2>
+      <h2>{username}'s {set} Collection</h2>
       <br />
         {cards.filter(card => card.set === set).map((card, i, a) => {
           return <Card key={a[i].id} card={a[i + count]} canEdit={false} i={i} a={a} count={count} setCount={setCount} />})}
