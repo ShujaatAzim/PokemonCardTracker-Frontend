@@ -42,7 +42,7 @@ const HomePage = props => {
     loading ? <LoadingScreen /> : set === "" ? <SetButtonsScreen setSet={setSet} /> :
     <div style={{ textAlign: "center" }}>
       <div>
-        <h1>{set} {setSymbols[set]}</h1>
+        <h1>{setSymbols[set]} {set} {setSymbols[set]}</h1>
         <br />
         <div>
           <div>
