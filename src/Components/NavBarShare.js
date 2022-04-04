@@ -16,7 +16,7 @@ const NavBarShare = props => {
       </Menu.Item>
       <Dropdown item text="Sets">
         <Dropdown.Menu>
-        <Dropdown.Item onClick={() => setSet("Base Set")} disabled={set === "Base Set"}>
+          <Dropdown.Item onClick={() => setSet("Base Set")} disabled={set === "Base Set"}>
             Base Set {setSymbols["Base Set"]}
           </Dropdown.Item>
           <Dropdown.Item onClick={() => setSet("Jungle")} disabled={set === "Jungle"}>
