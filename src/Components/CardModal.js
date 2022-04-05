@@ -52,29 +52,37 @@ const CardModal = props => {
           <Label>Quantity : <Label.Detail>{quantity}</Label.Detail></Label>
           <br />
           <br />
+          { canEdit ? <div>
+            <Button circular color="green" size="mini" onClick={() => {setQuantity(quantity + 1)}}>+</Button>
+            <Button circular color="red" size="mini" disabled={quantity < 1} onClick={() => setQuantity(quantity - 1)}>-</Button>
+          </div> : null }
+          <br />
+          <br />
+          <p><b>{ canEdit ? "Notes:" : "Owner's Notes:" }</b></p>
           <div>
-            { canEdit ? <Button circular color="green" size="mini" onClick={() => {setQuantity(quantity + 1)}}>+</Button> : null }
-            { canEdit ? <Button circular color="red" size="mini" disabled={quantity < 1} onClick={() => setQuantity(quantity - 1)}>-</Button> : null }
+            <Form>
+              <TextArea 
+                disabled={!canEdit} 
+                value={notes} 
+                rows={4} 
+                onChange={e => setNotes(e.target.value)} 
+                placeholder="add description here (condition, wants, etc)" 
+              />
+            </Form>
           </div>
           <br />
-          <br />
-          <p><b>Notes:</b></p>
-          <Form>
-            { canEdit ? 
-            <TextArea value={notes} rows={4} onChange={e => setNotes(e.target.value)} placeholder="add description here (condition, wants, etc)" /> : 
-            <p style={{ width: "300px", rows: "4"}}>{notes}</p> }
-          </Form>
-          <br />
-          <Button color='blue' circular icon labelPosition='left' disabled={i + count === 0 } 
-            onClick={() => {setCount(count - 1);setNotes(card.notes);setQuantity(card.quantity)}}>
-            Prev
-            <Icon name='left arrow' />
-          </Button>
-          <Button color='blue' circular icon labelPosition='right' disabled={i + count === a.length -1 } 
-            onClick={() => {setCount(count + 1);setNotes(card.notes);setQuantity(card.quantity)}}>
-            Next
-            <Icon name='right arrow' />
-          </Button>
+          <div>
+            <Button color='blue' circular icon labelPosition='left' disabled={i + count === 0 } 
+              onClick={() => {setCount(count - 1);setNotes(card.notes);setQuantity(card.quantity)}}>
+              Prev
+              <Icon name='left arrow' />
+            </Button>
+            <Button color='blue' circular icon labelPosition='right' disabled={i + count === a.length -1 } 
+              onClick={() => {setCount(count + 1);setNotes(card.notes);setQuantity(card.quantity)}}>
+              Next
+              <Icon name='right arrow' />
+            </Button>
+          </div>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
