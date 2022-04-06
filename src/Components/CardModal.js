@@ -66,7 +66,7 @@ const CardModal = props => {
                 value={notes} 
                 rows={4} 
                 onChange={e => setNotes(e.target.value)} 
-                placeholder="add description here (condition, wants, etc)" 
+                placeholder="add description here (card conditions, wants, price, etc)" 
               />
             </Form>
           </div>

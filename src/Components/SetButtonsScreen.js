@@ -52,6 +52,15 @@ const SetButtonsScreen = props => {
         </Dropdown.Menu>
       </Dropdown>
       </div>
+      <br />
+      <div style={{ listStylePosition: "inside" }}>
+        How to use this app:
+        <ol style={{ display: "block", marginLeft: "auto", marginRight: "auto" }}>
+          <li>Do</li>
+          <li>Like</li>
+          <li>This</li>
+        </ol>
+      </div>
       {/* <div>
         <Button id="set-button" color="blue" size="large" onClick={() => setSet("Base Set")}>Base Set</Button>
         <Button id="set-button" color="green" size="large" onClick={() => setSet("Jungle")}>Jungle</Button>
