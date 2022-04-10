@@ -21,18 +21,26 @@ const CardModal = props => {
   },[card]);
 
   // useEffect(() => {
+  //   const handleKeyLeft = () => {
+  //     setCount(count - 1)
+  //     setNotes(card.notes)
+  //     setQuantity(card.quantity)
+  //   }
+  
+  //   const handleKeyRight = () => {
+  //     setCount(count + 1)
+  //     setNotes(card.notes)
+  //     setQuantity(card.quantity)
+  //   }
+
   //   window.addEventListener('keydown', e => {
   //     if (e.key === "ArrowLeft") {
-  //       setCount(count - 1)
-  //       setNotes(card.notes)
-  //       setQuantity(card.quantity)
+  //       handleKeyLeft()
   //     } else if (e.key === "ArrowRight") {
-  //       setCount(count + 1)
-  //       setNotes(card.notes)
-  //       setQuantity(card.quantity)
+  //       handleKeyRight()
   //     }
   //   })
-  // }, [card, card.notes, card.quantity, count, setCount])
+  // }, [card, count, setCount])
 
   const handleSubmit = () => {
     let newCardInfo = {
