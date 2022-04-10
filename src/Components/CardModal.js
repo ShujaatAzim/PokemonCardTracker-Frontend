@@ -20,6 +20,20 @@ const CardModal = props => {
     setNotes(card.notes)
   },[card]);
 
+  // useEffect(() => {
+  //   window.addEventListener('keydown', e => {
+  //     if (e.key === "ArrowLeft") {
+  //       setCount(count - 1)
+  //       setNotes(card.notes)
+  //       setQuantity(card.quantity)
+  //     } else if (e.key === "ArrowRight") {
+  //       setCount(count + 1)
+  //       setNotes(card.notes)
+  //       setQuantity(card.quantity)
+  //     }
+  //   })
+  // }, [card, card.notes, card.quantity, count, setCount])
+
   const handleSubmit = () => {
     let newCardInfo = {
       quantity: quantity,

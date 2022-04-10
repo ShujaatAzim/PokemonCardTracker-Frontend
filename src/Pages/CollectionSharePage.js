@@ -7,7 +7,6 @@ import { setSymbols, raritySymbols } from '../Data/Symbols';
 import { Button } from 'semantic-ui-react';
 import url from '../urlHelper';
 
-
 const CollectionSharePage = props => {
   
   const { set, setSet } = props;
