@@ -59,7 +59,7 @@ const CollectionSharePage = props => {
             <Button circular toggle onClick={() => setCardType("all")} active={cardType === "all"}>All</Button>
             <Button circular toggle onClick={() => setCardType("pokemon")} active={cardType === "pokemon"}>Pokemon</Button>
             <Button circular toggle onClick={() => setCardType("trainer")} active={cardType === "trainer"}>Trainer</Button>
-            <Button circular toggle onClick={() => setCardType("energy")} active={cardType === "energy"}>Energy</Button>
+            <Button circular toggle onClick={() => setCardType("energy")} active={cardType === "energy"} disabled={set === "Jungle"}>Energy</Button>
           </div>
           <br />
           <div>

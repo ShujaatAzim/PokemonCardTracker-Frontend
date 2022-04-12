@@ -14,33 +14,8 @@ const CardModal = props => {
 
   useEffect(() => {
     setQuantity(card.quantity);
-  }, [card]);
-
-  useEffect(() => {
     setNotes(card.notes)
-  },[card]);
-
-  // useEffect(() => {
-  //   const handleKeyLeft = () => {
-  //     setCount(count - 1)
-  //     setNotes(card.notes)
-  //     setQuantity(card.quantity)
-  //   }
-  
-  //   const handleKeyRight = () => {
-  //     setCount(count + 1)
-  //     setNotes(card.notes)
-  //     setQuantity(card.quantity)
-  //   }
-
-  //   window.addEventListener('keydown', e => {
-  //     if (e.key === "ArrowLeft") {
-  //       handleKeyLeft()
-  //     } else if (e.key === "ArrowRight") {
-  //       handleKeyRight()
-  //     }
-  //   })
-  // }, [card, count, setCount])
+  }, [card]);
 
   const handleSubmit = () => {
     let newCardInfo = {

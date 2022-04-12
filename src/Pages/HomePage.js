@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useRecoilState } from 'recoil';
-import { cardsState } from '../Recoil/atoms';
 import Card from '../Components/Card';
 import SetButtonsScreen from '../Components/SetButtonsScreen';
 import LoadingScreen from '../Components/LoadingScreen';
 import url from '../urlHelper';
+import { useRecoilState } from 'recoil';
+import { cardsState } from '../Recoil/atoms';
 import { Button } from 'semantic-ui-react';
 import { setSymbols } from '../Data/Symbols';
 import { raritySymbols } from '../Data/Symbols';
@@ -49,7 +49,7 @@ const HomePage = props => {
             <Button circular toggle onClick={() => setCardType("all")} active={cardType === "all"}>All</Button>
             <Button circular toggle onClick={() => setCardType("pokemon")} active={cardType === "pokemon"}>Pokemon</Button>
             <Button circular toggle onClick={() => setCardType("trainer")} active={cardType === "trainer"}>Trainer</Button>
-            <Button circular toggle onClick={() => setCardType("energy")} active={cardType === "energy"}>Energy</Button>
+            <Button circular toggle onClick={() => setCardType("energy")} active={cardType === "energy"} disabled={set === "Jungle"}>Energy</Button>
           </div>
           <br />
           <div>
