@@ -74,14 +74,14 @@ const CollectionSharePage = props => {
         <br />
         <div>
           { rarity === "all" && cardType === "all" ? cards.filter(card => card.set === set).map((card, i, a) => 
-              <Card key={a[i].id} card={a[i + count]} canEdit={true} i={i} a={a} count={count} setCount={setCount} />) 
+              <Card key={a[i].id} card={a[i + count]} canEdit={false} i={i} a={a} count={count} setCount={setCount} />) 
             : rarity !== "all" && cardType === "all" ? cards.filter(card => card.set === set && card.rarity === rarity).map((card, i, a) => 
-              <Card key={a[i].id} card={a[i + count]} canEdit={true} i={i} a={a} count={count} setCount={setCount} />)
+              <Card key={a[i].id} card={a[i + count]} canEdit={false} i={i} a={a} count={count} setCount={setCount} />)
             : rarity === "all" && cardType !== "all" ? cards.filter(card => card.set === set && card.card_type === cardType).map((card, i, a) => 
-              <Card key={a[i].id} card={a[i + count]} canEdit={true} i={i} a={a} count={count} setCount={setCount} />) 
+              <Card key={a[i].id} card={a[i + count]} canEdit={false} i={i} a={a} count={count} setCount={setCount} />) 
             : cards.filter(card => card.set === set && card.rarity === rarity && card.card_type === cardType).length !== 0 ? 
               cards.filter(card => card.set === set && card.rarity === rarity && card.card_type === cardType).map((card, i, a) => 
-              <Card key={a[i].id} card={a[i + count]} canEdit={true} i={i} a={a} count={count} setCount={setCount} />) 
+              <Card key={a[i].id} card={a[i + count]} canEdit={false} i={i} a={a} count={count} setCount={setCount} />) 
             : <p>{`NO ${cardType.toUpperCase()} CARDS OF ${rarity.toUpperCase()} RARITY IN THIS SET!`}</p>
           }
         </div>
