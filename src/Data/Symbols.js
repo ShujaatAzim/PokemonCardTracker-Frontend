@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const setSymbols = {
   "Base Set": <img src="https://images.pokemontcg.io/base1/symbol.png" alt="base set symbol" style={{ height: "15px" }} />,
   "Jungle": <img src="https://images.pokemontcg.io/base2/symbol.png" alt="jungle set symbol" style={{ height: "15px" }} />,
