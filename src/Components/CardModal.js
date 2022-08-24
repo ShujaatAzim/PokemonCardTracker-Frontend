@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Button, Form, Image, Modal, TextArea, Label, Icon } from 'semantic-ui-react';
 import { setSymbols } from '../Data/Symbols';
 import { raritySymbols } from '../Data/Symbols'
@@ -12,10 +12,26 @@ const CardModal = props => {
   const [quantity, setQuantity] = useState(card.quantity);
   const [notes, setNotes] = useState(card.notes);
 
+  const moveCard = useCallback(e => {
+    if (e.key === "ArrowLeft" && i + count !== 0) {
+      setCount(count - 1)
+      setNotes(card.notes)
+      setQuantity(card.quantity)
+    } else if (e.key === "ArrowRight" && i + count !== a.length -1) {
+      setCount(count + 1)
+      setNotes(card.notes)
+      setQuantity(card.quantity)
+    }
+  }, [card, a, count, setCount, i])
+
   useEffect(() => {
     setQuantity(card.quantity);
     setNotes(card.notes)
-  }, [card]);
+    document.addEventListener("keydown", moveCard, false)
+    return () => { 
+      document.removeEventListener("keydown", moveCard, false)
+    }
+  }, [card, moveCard]);
 
   const handleSubmit = () => {
     let newCardInfo = {
