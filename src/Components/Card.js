@@ -16,7 +16,7 @@ const Card = props => {
           opacity: a[i].quantity === 0 ? "35%" : "100%" 
         }} 
         src={a[i].image} 
-        alt="card" 
+        alt={`${a[i].name}'s card pic from the ${a[i].set} set.`} 
         onClick={() => setOpen(!open)}
         />
       {open ? 
