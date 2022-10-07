@@ -96,6 +96,8 @@ const CardModal = props => {
               <Icon name='right arrow' />
             </Button>
           </div>
+          <br />
+          <i>(Use arrow keys to navigate!)</i>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
