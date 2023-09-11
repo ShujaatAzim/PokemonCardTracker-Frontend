@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Button,
   Form,
@@ -7,11 +7,11 @@ import {
   TextArea,
   Label,
   Icon,
-} from "semantic-ui-react";
-import { setSymbols } from "../Data/Symbols";
-import { raritySymbols } from "../Data/Symbols";
-import swal from "sweetalert";
-import url from "../urlHelper";
+} from 'semantic-ui-react';
+import { setSymbols } from '../Data/Symbols';
+import { raritySymbols } from '../Data/Symbols';
+import swal from 'sweetalert';
+import url from '../urlHelper';
 
 const CardModal = (props) => {
   // would like to clarify what a and i are in the props and give better names
@@ -34,11 +34,11 @@ const CardModal = (props) => {
 
   const moveCard = useCallback(
     (e) => {
-      if (e.key === "ArrowLeft" && i + count !== 0) {
+      if (e.key === 'ArrowLeft' && i + count !== 0) {
         setCount(count - 1);
         setNotes(card.notes);
         setQuantity(card.quantity);
-      } else if (e.key === "ArrowRight" && i + count !== a.length - 1) {
+      } else if (e.key === 'ArrowRight' && i + count !== a.length - 1) {
         setCount(count + 1);
         setNotes(card.notes);
         setQuantity(card.quantity);
@@ -50,9 +50,9 @@ const CardModal = (props) => {
   useEffect(() => {
     setQuantity(card.quantity);
     setNotes(card.notes);
-    document.addEventListener("keydown", moveCard, false);
+    document.addEventListener('keydown', moveCard, false);
     return () => {
-      document.removeEventListener("keydown", moveCard, false);
+      document.removeEventListener('keydown', moveCard, false);
     };
   }, [card, moveCard]);
 
@@ -62,11 +62,11 @@ const CardModal = (props) => {
       notes: notes,
     };
     fetch(`${url}/cards/${card.id}`, {
-      method: "PATCH",
+      method: 'PATCH',
       headers: {
         Authorization: `Bearer ${creds.jwt}`,
-        "Content-Type": "application/json",
-        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
       body: JSON.stringify(newCardInfo),
     })
@@ -80,7 +80,7 @@ const CardModal = (props) => {
         swal(
           `${card.name} Updated!`,
           `Your ${card.name} card info has been updated!`,
-          "success"
+          'success'
         )
       );
   };
@@ -93,16 +93,16 @@ const CardModal = (props) => {
       }}
       onOpen={() => setOpen(true)}
       open={open}
-      size="small"
+      size='small'
     >
-      <Modal.Header style={{ textAlign: "center" }}>
+      <Modal.Header style={{ textAlign: 'center' }}>
         {card.name} {setSymbols[card.set]}
       </Modal.Header>
       <Modal.Content image>
-        <Image size="medium" src={card.image} wrapped />
+        <Image size='medium' src={card.image} wrapped />
         <Modal.Description>
           <p>
-            {" "}
+            {' '}
             {raritySymbols[card.rarity]} (
             {card.rarity.charAt(0).toUpperCase() + card.rarity.slice(1)})
           </p>
@@ -118,8 +118,8 @@ const CardModal = (props) => {
             <div>
               <Button
                 circular
-                color="green"
-                size="mini"
+                color='green'
+                size='mini'
                 onClick={() => {
                   setQuantity(quantity + 1);
                 }}
@@ -128,8 +128,8 @@ const CardModal = (props) => {
               </Button>
               <Button
                 circular
-                color="red"
-                size="mini"
+                color='red'
+                size='mini'
                 disabled={quantity < 1}
                 onClick={() => setQuantity(quantity - 1)}
               >
@@ -140,7 +140,7 @@ const CardModal = (props) => {
           <br />
           <br />
           <p>
-            <b>{canEdit ? "Notes:" : "Owner's Notes:"}</b>
+            <b>{canEdit ? 'Notes:' : "Owner's Notes:"}</b>
           </p>
           <div>
             <Form>
@@ -149,17 +149,17 @@ const CardModal = (props) => {
                 value={notes}
                 rows={4}
                 onChange={(e) => setNotes(e.target.value)}
-                placeholder="add description here (card conditions, wants, price, etc)"
+                placeholder='add description here (card conditions, wants, price, etc)'
               />
             </Form>
           </div>
           <br />
           <div>
             <Button
-              color="blue"
+              color='blue'
               circular
               icon
-              labelPosition="left"
+              labelPosition='left'
               disabled={i + count === 0}
               onClick={() => {
                 setCount(count - 1);
@@ -168,13 +168,13 @@ const CardModal = (props) => {
               }}
             >
               Prev
-              <Icon name="left arrow" />
+              <Icon name='left arrow' />
             </Button>
             <Button
-              color="blue"
+              color='blue'
               circular
               icon
-              labelPosition="right"
+              labelPosition='right'
               disabled={i + count === a.length - 1}
               onClick={() => {
                 setCount(count + 1);
@@ -183,7 +183,7 @@ const CardModal = (props) => {
               }}
             >
               Next
-              <Icon name="right arrow" />
+              <Icon name='right arrow' />
             </Button>
           </div>
           <br />
@@ -192,19 +192,19 @@ const CardModal = (props) => {
       </Modal.Content>
       <Modal.Actions>
         <Button
-          color="red"
+          color='red'
           onClick={() => {
             setOpen(false);
             setCount(0);
           }}
         >
-          {canEdit ? "Cancel" : "Close"}
+          {canEdit ? 'Cancel' : 'Close'}
         </Button>
         {canEdit ? (
           <Button
-            content="Submit Changes"
-            labelPosition="right"
-            icon="checkmark"
+            content='Submit Changes'
+            labelPosition='right'
+            icon='checkmark'
             onClick={() => {
               setOpen(false);
               handleSubmit();
