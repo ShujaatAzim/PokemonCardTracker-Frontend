@@ -1,16 +1,16 @@
 import { atom } from 'recoil';
 
 export const userState = atom({
-  key: "user",
-  default: {}
+  key: 'user',
+  default: {},
 });
 
 export const cardsState = atom({
-  key: "cards",
-  default: []
+  key: 'cards',
+  default: [],
 });
 
 export const setState = atom({
-  key: "set",
-  default: "base"
+  key: 'set',
+  default: 'base',
 });
