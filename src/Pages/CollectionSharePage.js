@@ -47,7 +47,7 @@ const CollectionSharePage = (props) => {
     }
   };
 
-  return loading || cards === [] ? (
+  return loading || !cards.length ? (
     <LoadingScreen />
   ) : username !== '' && !set ? (
     <SetButtonsShare username={username} setSet={setSet} />
