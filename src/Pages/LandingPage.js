@@ -8,6 +8,7 @@ const LandingPage = () => {
       <div>News?</div>
       <div>Benefits</div>
       <div>Instructions?</div>
+      <div>Footer? or stick to main layout footer</div>
     </div>
   );
 };
