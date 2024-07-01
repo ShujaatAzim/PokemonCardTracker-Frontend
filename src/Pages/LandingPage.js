@@ -3,6 +3,7 @@ import React from 'react';
 const LandingPage = () => {
   return (
     <div>
+      {/* site layout in progress, might update to next */}
       <h1>Landing Page</h1>
       <div>Hero Image</div>
       <div>News?</div>
